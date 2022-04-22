@@ -1,4 +1,5 @@
 import * as S from './container.styled';
+import React from 'react';
 
 
 interface ContainerProps {
