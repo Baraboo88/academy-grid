@@ -1,12 +1,14 @@
-import { MainLayout, PageTitle, PageSubtext } from '../common/common';
+import { MainLayout, PageSubtext, PageTitle } from '../common/common';
 
 import * as S from './contacts.styled';
 import ContactMap from './contact-map/contact-map';
+import useActiveTab from '../../hooks/use-active-tab';
+import { ActiveTab } from '../../reducer/reducer';
 
 
-
-const Contacts = () => (
-  <MainLayout>
+const Contacts = () => {
+  useActiveTab(ActiveTab.CONTACTS);
+  return <MainLayout>
     <S.Main>
       <S.ContentWrapper>
         <S.PageHeading>
@@ -30,14 +32,14 @@ const Contacts = () => (
 
             <S.ContactTitle>Телефон</S.ContactTitle>
             <S.ContactValue>
-              <S.ContactLink href="tel:8 (800) 333-55-99">
+              <S.ContactLink href='tel:8 (800) 333-55-99'>
                 8 (800) 333-55-99
               </S.ContactLink>
             </S.ContactValue>
 
             <S.ContactTitle>E-mail</S.ContactTitle>
             <S.ContactValue>
-              <S.ContactLink href="mailto:info@escape-room.ru">
+              <S.ContactLink href='mailto:info@escape-room.ru'>
                 info@escape-room.ru
               </S.ContactLink>
             </S.ContactValue>
@@ -46,13 +48,13 @@ const Contacts = () => (
           <S.ContactsMap>
 
 
-              <ContactMap/>
+            <ContactMap />
 
           </S.ContactsMap>
         </S.Contacts>
       </S.ContentWrapper>
     </S.Main>
-  </MainLayout>
-);
+  </MainLayout>;
+};
 
 export default Contacts;

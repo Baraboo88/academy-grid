@@ -1,3 +1,5 @@
+import { ActiveTab } from '../reducer/reducer';
+
 export enum QuestType {
   ADVENTURES = 'adventures',
   HORROR = 'horror',
@@ -42,6 +44,7 @@ export interface StateModel {
   isOrderSent?: boolean;
   isResponseReceived: boolean;
   errorMsg: string;
+  activeTab: ActiveTab;
 }
 
 

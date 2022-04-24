@@ -7,10 +7,11 @@ import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
 import { connect } from 'react-redux';
 import { getCyrillicLevel, getCyrillicType, QuestModel, StateModel } from '../../utils/utils';
-import { getCurrentQuest, getErrorMsg, getIsResponseReceived, getQuests } from '../../reducer/selectors';
-import { ActionCreator, Operation } from '../../reducer/reducer';
+import { getCurrentQuest, getErrorMsg} from '../../reducer/selectors';
+import { ActionCreator, ActiveTab, ErrorMsg, Operation } from '../../reducer/reducer';
 import { RouteComponentProps } from 'react-router-dom';
 import{AlertMsg} from '../home/home.styled';
+import useActiveTab from '../../hooks/use-active-tab';
 
 interface MatchParams {
   id: string;
@@ -26,8 +27,8 @@ interface DetailedQuestProps {
 
 const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchParams>> = (props) => {
 
-  const { currentQuest, errorMsg, getQuest, resetCurrentQuest } = props;
-  const [error, setError] = useState('');
+  const { currentQuest, errorMsg, getQuest, resetCurrentQuest,history } = props;
+
   useEffect(() => {
     if (props.match.params.id) {
       // @ts-ignore
@@ -37,7 +38,16 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
       resetCurrentQuest();
     };
   }, [props.match.params.id, getQuest]);
+
+  useEffect(() => {
+    if(errorMsg === ErrorMsg.NOT_FOUNT){
+      history.push(`/not-found`);
+    }
+  }, [errorMsg])
+  useActiveTab(ActiveTab.MAIN);
+
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
+
 
   if (!currentQuest) {
     return null;

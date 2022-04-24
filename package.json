@@ -38,7 +38,7 @@
     "start:server": "node server/server",
     "start": "concurrently -k -p \"{name}\" -n \"CLIENT,SERVER\" -c \"green,blue\" \"npm:start:client\" \"npm:start:server\"",
     "build": "react-scripts build",
-    "eslint": "eslint --ext .jsx --ext .js src/"
+    "eslint": "eslint --ext .tsx --ext .ts src/"
   },
   "eslintConfig": {
     "extends": [

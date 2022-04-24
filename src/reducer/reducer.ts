@@ -1,25 +1,31 @@
-import { mockQuests } from '../utils/test-utils';
 import { OrderModel, QuestModel, StateModel } from '../utils/utils';
 
 const BAD_REQUEST = 400;
+const NOT_FOUND_ERROR = 404;
 const ORDER_OK_STATUS = 201;
 export const ErrorMsg ={
-  other: 'Something went wrong...',
-  data: 'Please check the data'
+  OTHER: 'Something went wrong...',
+  DATA: 'Please check the data',
+  NOT_FOUNT: 'not-found'
 }
 
+export enum ActiveTab{
+  MAIN, CONTACTS,OTHER
+}
 
 export const Action = {
   SET_QUESTS: 'set-quests',
   SET_QUEST: 'set-quest',
   SET_IS_ORDER_SENT: 'set-is-order-sent',
-  SET_ERROR: 'set-error'
+  SET_ERROR: 'set-error',
+  SET_ACTIVE_TAB: 'set-active-tab'
 };
 
 const initialState:StateModel = {
   quests: [],
   isResponseReceived: false,
-  errorMsg: ''
+  errorMsg: '',
+  activeTab: ActiveTab.MAIN
 };
 
 
@@ -34,7 +40,7 @@ export const Operation = {
         })
         .catch((error:any) => {
           if (error.response.status === BAD_REQUEST) {
-            dispatch(ActionCreator.setError(ErrorMsg.other));
+            dispatch(ActionCreator.setError(ErrorMsg.OTHER));
           }
           dispatch(ActionCreator.setError(error.message));
         });
@@ -49,8 +55,11 @@ export const Operation = {
           dispatch(ActionCreator.setQuest(response.data));
         })
         .catch((error:any) => {
+
           if (error.response.status === BAD_REQUEST) {
-            dispatch(ActionCreator.setError(ErrorMsg.other));
+            dispatch(ActionCreator.setError(ErrorMsg.OTHER));
+          } else if(error.response.status === NOT_FOUND_ERROR){
+            dispatch(ActionCreator.setError(ErrorMsg.NOT_FOUNT));
           }
           else {
             dispatch(ActionCreator.setError(error.message));
@@ -73,7 +82,7 @@ export const Operation = {
         })
         .catch((error:any) => {
           if (error.response.status === BAD_REQUEST) {
-            dispatch(ActionCreator.setError(ErrorMsg.other));
+            dispatch(ActionCreator.setError(ErrorMsg.NOT_FOUNT));
           }else {
             dispatch(ActionCreator.setError(error.message));
           }
@@ -97,6 +106,9 @@ export const ActionCreator = {
   setError(error: string) {
     return {type: Action.SET_ERROR, payload: error};
   },
+  setActiveTab(tabIndex: ActiveTab){
+    return {type: Action.SET_ACTIVE_TAB, payload: tabIndex};
+  }
 }
 
 
@@ -122,6 +134,8 @@ export const reducer = (state: StateModel = initialState, action:any) => {
       });
     case Action.SET_ERROR:
       return Object.assign({}, state, {errorMsg: action.payload});
+    case Action.SET_ACTIVE_TAB:
+      return Object.assign({}, state, {activeTab: action.payload});
 
   }
   return state;

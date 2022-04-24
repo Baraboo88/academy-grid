@@ -1,41 +1,72 @@
 import logo from 'assets/img/logo.svg';
 import * as S from './header.styled';
+import { StateModel } from '../../../utils/utils';
+import { ActionCreator, ActiveTab } from '../../../reducer/reducer';
+import { connect } from 'react-redux';
+import React from 'react';
+import { getActiveTab } from '../../../reducer/selectors';
 
-const Header = () => (
-  <S.StyledHeader>
-    <S.HeaderWrapper>
-      <S.Logo>
-        <S.Image src={logo} alt="Логотип Escape Room" width="134" height="50" />
-      </S.Logo>
+interface HeaderProps {
+  activeTab: ActiveTab;
+  setActiveTab: (tabIndex: ActiveTab) => void
+}
 
-      <S.Navigation>
-        <S.Links>
-          <S.LinkItem>
-            <S.Link $isActiveLink to="/">
-              Квесты
-            </S.Link>
-          </S.LinkItem>
+const Header: React.FC<HeaderProps> = (props) => {
 
-          <S.LinkItem>
-            <S.Link to="#">Новичкам</S.Link>
-          </S.LinkItem>
+    const { activeTab, setActiveTab } = props;
 
-          <S.LinkItem>
-            <S.Link to="#">Отзывы</S.Link>
-          </S.LinkItem>
+    const otherClickHandler = () => {
+      setActiveTab(ActiveTab.OTHER);
+    };
 
-          <S.LinkItem>
-            <S.Link to="#">Акции</S.Link>
-          </S.LinkItem>
+    return <S.StyledHeader>
+      <S.HeaderWrapper>
+        <S.Logo>
+          <S.Image src={logo} alt='Логотип Escape Room' width='134' height='50' />
+        </S.Logo>
 
-          <S.LinkItem>
-            <S.Link to="/contacts">Контакты</S.Link>
-          </S.LinkItem>
-        </S.Links>
-      </S.Navigation>
-      <S.Phone href="tel:88003335599">8 (800) 333-55-99</S.Phone>
-    </S.HeaderWrapper>
-  </S.StyledHeader>
-);
+        <S.Navigation>
+          <S.Links>
+            <S.LinkItem>
+              <S.Link isActiveLink={activeTab === ActiveTab.MAIN} to='/'>
+                Квесты
+              </S.Link>
+            </S.LinkItem>
 
-export default Header;
+            <S.LinkItem onClick={otherClickHandler}>
+              <S.Link to='#'>Новичкам</S.Link>
+            </S.LinkItem>
+
+            <S.LinkItem onClick={otherClickHandler}>
+              <S.Link to='#'>Отзывы</S.Link>
+            </S.LinkItem>
+
+            <S.LinkItem onClick={otherClickHandler}>
+              <S.Link to='#'>Акции</S.Link>
+            </S.LinkItem>
+
+            <S.LinkItem>
+              <S.Link isActiveLink={activeTab === ActiveTab.CONTACTS} to='/contacts'>Контакты</S.Link>
+            </S.LinkItem>
+          </S.Links>
+        </S.Navigation>
+        <S.Phone href='tel:88003335599'>8 (800) 333-55-99</S.Phone>
+      </S.HeaderWrapper>
+    </S.StyledHeader>;
+  }
+;
+
+const mapStateToProps = (state: StateModel) => {
+  return {
+    activeTab: getActiveTab(state),
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => ({
+  setActiveTab(activeTab: ActiveTab) {
+    dispatch(ActionCreator.setActiveTab(activeTab));
+  },
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
