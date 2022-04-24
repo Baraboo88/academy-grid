@@ -30,4 +30,13 @@ const Main = styled(Container)`
   }
 `;
 
-export { Main };
+const AlertMsg= styled.span`
+  display: block;
+  padding-top: 20px;
+  color: red;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
+`
+
+export { Main, AlertMsg };

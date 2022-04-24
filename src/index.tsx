@@ -6,7 +6,6 @@ import thunk from "redux-thunk";
 import {Provider} from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit'
 import App from './components/app/app';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import { createApi } from './api';
 
 

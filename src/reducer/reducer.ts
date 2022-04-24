@@ -2,7 +2,7 @@ import { mockQuests } from '../utils/test-utils';
 import { OrderModel, QuestModel, StateModel } from '../utils/utils';
 
 const BAD_REQUEST = 400;
-
+const ORDER_OK_STATUS = 201;
 export const ErrorMsg ={
   other: 'Something went wrong...',
   data: 'Please check the data'
@@ -52,23 +52,32 @@ export const Operation = {
           if (error.response.status === BAD_REQUEST) {
             dispatch(ActionCreator.setError(ErrorMsg.other));
           }
-          dispatch(ActionCreator.setError(error.message));
+          else {
+            dispatch(ActionCreator.setError(error.message));
+          }
+
         });
     };
   },
 
   sendOrder(order:OrderModel) {
     return (dispatch:any, state:StateModel, api:any) => {
+      dispatch(ActionCreator.setError(''));
       api
         .post(`/orders`, order)
         .then((response:any) => {
-          dispatch(ActionCreator.setQuest(response.data));
+          if (response.status === ORDER_OK_STATUS) {
+            dispatch(ActionCreator.setIsOrderSent(true));
+          }
+
         })
         .catch((error:any) => {
           if (error.response.status === BAD_REQUEST) {
             dispatch(ActionCreator.setError(ErrorMsg.other));
+          }else {
+            dispatch(ActionCreator.setError(error.message));
           }
-          dispatch(ActionCreator.setError(error.message));
+
         });
     };
   },
@@ -82,11 +91,11 @@ export const ActionCreator = {
   setQuest(quest: QuestModel | null) {
     return {type: Action.SET_QUEST, payload: quest};
   },
-  setIsOrderSent(isOrderSent: QuestModel) {
+  setIsOrderSent(isOrderSent: boolean) {
     return {type: Action.SET_IS_ORDER_SENT, payload: isOrderSent};
   },
   setError(error: string) {
-    return {type: Action.SET_QUEST, payload: error};
+    return {type: Action.SET_ERROR, payload: error};
   },
 }
 

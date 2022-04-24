@@ -32,7 +32,7 @@ export interface QuestModel {
 export interface OrderModel {
   name: string;
   peopleCount: number;
-  phone: number;
+  phone: string;
   isLegal: boolean
 }
 

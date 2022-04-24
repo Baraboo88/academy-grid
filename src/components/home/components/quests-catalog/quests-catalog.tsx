@@ -19,6 +19,7 @@ import { connect } from 'react-redux';
 import { Operation } from '../../../../reducer/reducer';
 import { getErrorMsg, getIsResponseReceived, getQuests } from '../../../../reducer/selectors';
 import React, { useEffect, useState } from 'react';
+import { AlertMsg } from '../../home.styled';
 
 
 interface QuestsCatalogProps {
@@ -63,14 +64,9 @@ const QuestsCatalog: React.FC<QuestsCatalogProps> = (props) => {
 
   return (
     <>
-      {error && <span style={{
-        display: `block`,
-        margin: `0 auto`,
-        paddingTop: 20,
-        color: `red`,
-        textAlign: `center`,
-        fontSize: 20,
-      }}>{error}</span>}
+      {error && <AlertMsg>
+        {error}
+      </AlertMsg>}
       <S.Tabs>
         <S.TabItem>
           <S.TabBtn isActive={activeType === -1} onClick={() => {

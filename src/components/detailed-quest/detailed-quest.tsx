@@ -9,13 +9,14 @@ import { connect } from 'react-redux';
 import { getCyrillicLevel, getCyrillicType, QuestModel, StateModel } from '../../utils/utils';
 import { getCurrentQuest, getErrorMsg, getIsResponseReceived, getQuests } from '../../reducer/selectors';
 import { ActionCreator, Operation } from '../../reducer/reducer';
-import {RouteComponentProps} from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
+import{AlertMsg} from '../home/home.styled';
 
 interface MatchParams {
   id: string;
 }
 
-interface DetailedQuestProps{
+interface DetailedQuestProps {
   currentQuest?: QuestModel | null;
   errorMsg?: string;
   getQuest?: (id: number) => void;
@@ -23,19 +24,18 @@ interface DetailedQuestProps{
 }
 
 
-
 const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchParams>> = (props) => {
 
-  const {currentQuest, errorMsg,  getQuest, resetCurrentQuest} = props;
-
+  const { currentQuest, errorMsg, getQuest, resetCurrentQuest } = props;
+  const [error, setError] = useState('');
   useEffect(() => {
-    if(props.match.params.id){
+    if (props.match.params.id) {
       // @ts-ignore
       getQuest(Number(props.match.params.id));
     }
     return () => {
       resetCurrentQuest();
-    }
+    };
   }, [props.match.params.id, getQuest]);
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
@@ -43,7 +43,9 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
     return null;
   }
 
-
+  const bookingModalCloseHandler = () => {
+    setIsBookingModalOpened(false);
+  };
 
   const onBookingBtnClick = () => {
     setIsBookingModalOpened(true);
@@ -52,28 +54,25 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
   return (
     <MainLayout>
 
-      <S.Main>
+      {currentQuest && <S.Main>
+
         {errorMsg && (
-          <span
-            style={{
-              display: `block`,
-              margin: `0 auto`,
-              paddingTop: 20,
-              color: `red`,
-              textAlign: `center`,
-              fontSize: 20
-            }}
-          >
-            errorMsg
-          </span>
+          <AlertMsg>
+            {errorMsg}
+          </AlertMsg>
         )}
         <S.PageImage
           src={`/${currentQuest.coverImg}`}
           alt={`Квест ${currentQuest.title}`}
-          width="1366"
-          height="768"
+          width='1366'
+          height='768'
         />
         <S.PageContentWrapper>
+          {errorMsg && (
+            <AlertMsg>
+              {errorMsg}
+            </AlertMsg>
+          )}
           <S.PageHeading>
             <S.PageTitle>{currentQuest.title}</S.PageTitle>
             <S.PageSubtitle>{getCyrillicType(currentQuest.type)}</S.PageSubtitle>
@@ -82,15 +81,15 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
           <S.PageDescription>
             <S.Features>
               <S.FeaturesItem>
-                <IconClock width="20" height="20" />
+                <IconClock width='20' height='20' />
                 <S.FeatureTitle>90 мин</S.FeatureTitle>
               </S.FeaturesItem>
               <S.FeaturesItem>
-                <IconPerson width="19" height="24" />
-                <S.FeatureTitle>{`${currentQuest.peopleCount[0]}–${currentQuest.peopleCount[1]} чел`}</S.FeatureTitle>
+                <IconPerson width='19' height='24' />
+                <S.FeatureTitle>{currentQuest.peopleCount && currentQuest.peopleCount.length > 1 ? `${currentQuest.peopleCount[0]}–${currentQuest.peopleCount[1]} чел` : ''}</S.FeatureTitle>
               </S.FeaturesItem>
               <S.FeaturesItem>
-                <IconPuzzle width="24" height="24" />
+                <IconPuzzle width='24' height='24' />
                 <S.FeatureTitle>{getCyrillicLevel(currentQuest.level)}</S.FeatureTitle>
               </S.FeaturesItem>
             </S.Features>
@@ -105,8 +104,8 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal />}
-      </S.Main>
+        {isBookingModalOpened && <BookingModal onBookingModalClose={bookingModalCloseHandler} />}
+      </S.Main>}
     </MainLayout>
   );
 };
@@ -114,7 +113,7 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
 const mapStateToProps = (state: StateModel) => {
   return {
     currentQuest: getCurrentQuest(state),
-    errorMsg: getErrorMsg(state)
+    errorMsg: getErrorMsg(state),
   };
 };
 
@@ -122,9 +121,9 @@ const mapDispatchToProps = (dispatch: any) => ({
   getQuest(id: number) {
     dispatch(Operation.getQuest(id));
   },
-  resetCurrentQuest(){
-    dispatch(ActionCreator.setQuest(null))
-  }
+  resetCurrentQuest() {
+    dispatch(ActionCreator.setQuest(null));
+  },
 });
 
 
