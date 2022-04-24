@@ -1,229 +1,148 @@
-import { ReactComponent as IconAllQuests } from '../../../../assets/img/icon-all-quests.svg';
-import { ReactComponent as IconAdventures } from '../../../../assets/img/icon-adventures.svg';
-import { ReactComponent as IconHorrors } from '../../../../assets/img/icon-horrors.svg';
-import { ReactComponent as IconMystic } from '../../../../assets/img/icon-mystic.svg';
-import { ReactComponent as IconDetective } from '../../../../assets/img/icon-detective.svg';
-import { ReactComponent as IconScifi } from '../../../../assets/img/icon-scifi.svg';
-import { ReactComponent as IconPerson } from '../../../../assets/img/icon-person.svg';
-import { ReactComponent as IconPuzzle } from '../../../../assets/img/icon-puzzle.svg';
+import { ReactComponent as IconAllQuests } from 'assets/img/icon-all-quests.svg';
+import { ReactComponent as IconAdventures } from 'assets/img/icon-adventures.svg';
+import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';
+import { ReactComponent as IconMystic } from 'assets/img/icon-mystic.svg';
+import { ReactComponent as IconDetective } from 'assets/img/icon-detective.svg';
+import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
+import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
+import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
+import {
+  applyFilter,
+  getCyrillicLevel,
+  getCyrillicType,
+  QuestModel,
+  QuestType,
+  StateModel,
+} from '../../../../utils/utils';
+import { connect } from 'react-redux';
+import { Operation } from '../../../../reducer/reducer';
+import { getErrorMsg, getIsResponseReceived, getQuests } from '../../../../reducer/selectors';
+import React, { useEffect, useState } from 'react';
 
-const QuestsCatalog = () => (
-  <>
-    <S.Tabs>
-      <S.TabItem>
-        <S.TabBtn isActive>
-          <IconAllQuests />
-          <S.TabTitle>Все квесты</S.TabTitle>
-        </S.TabBtn>
-      </S.TabItem>
 
-      <S.TabItem>
-        <S.TabBtn>
-          <IconAdventures />
-          <S.TabTitle>Приключения</S.TabTitle>
-        </S.TabBtn>
-      </S.TabItem>
+interface QuestsCatalogProps {
+  quests: QuestModel [];
+  getQuests: () => void;
+  isResponseReceived: boolean;
+  errorMsg: string;
+}
 
-      <S.TabItem>
-        <S.TabBtn>
-          <IconHorrors />
-          <S.TabTitle>Ужасы</S.TabTitle>
-        </S.TabBtn>
-      </S.TabItem>
+const QuestsCatalog: React.FC<QuestsCatalogProps> = (props) => {
+  const { quests, getQuests, isResponseReceived, errorMsg } = props;
+  const [error, setError] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [innerQuests, setInnerQuests] = useState<QuestModel []>([]);
+  useEffect(() => {
+    if (isResponseReceived && errorMsg) {
+      setError(errorMsg);
+    }
+    if (!isResponseReceived) {
+      getQuests();
+    } else {
+      setIsLoading(false);
+      setInnerQuests(quests);
+    }
+  }, [quests, getQuests, isResponseReceived, errorMsg]);
 
-      <S.TabItem>
-        <S.TabBtn>
-          <IconMystic />
-          <S.TabTitle>Мистика</S.TabTitle>
-        </S.TabBtn>
-      </S.TabItem>
+  const [activeType, setActiveType] = useState(-1);
 
-      <S.TabItem>
-        <S.TabBtn>
-          <IconDetective />
-          <S.TabTitle>Детектив</S.TabTitle>
-        </S.TabBtn>
-      </S.TabItem>
+  const getTypeIcon = (type: QuestType) => {
+    switch (type) {
+      case QuestType.ADVENTURES:
+        return <IconAdventures />;
+      case QuestType.DETECTIVE:
+        return <IconDetective />;
+      case QuestType.HORROR:
+        return <IconHorrors />;
+      case QuestType.MYSTIC:
+        return <IconScifi />;
+    }
+  };
 
-      <S.TabItem>
-        <S.TabBtn>
-          <IconScifi />
-          <S.TabTitle>Sci-fi</S.TabTitle>
-        </S.TabBtn>
-      </S.TabItem>
-    </S.Tabs>
 
-    <S.QuestsList>
-      <S.QuestItem>
-        <S.QuestItemLink to="/quest">
-          <S.Quest>
-            <S.QuestImage
-              src="img/preview-sklep.jpg"
-              width="344"
-              height="232"
-              alt="квест Склеп"
-            />
+  return (
+    <>
+      {error && <span style={{
+        display: `block`,
+        margin: `0 auto`,
+        paddingTop: 20,
+        color: `red`,
+        textAlign: `center`,
+        fontSize: 20,
+      }}>{error}</span>}
+      <S.Tabs>
+        <S.TabItem>
+          <S.TabBtn isActive={activeType === -1} onClick={() => {
+            setActiveType(-1);
+            setInnerQuests(quests);
+          }}>
+            <IconAllQuests />
+            <S.TabTitle>Все квесты</S.TabTitle>
+          </S.TabBtn>
+        </S.TabItem>
+        {Object.values(QuestType).map((questionType, index) => <S.TabItem key={`${index}-${questionType}`}>
+          <S.TabBtn isActive={index === activeType} onClick={() => {
+            setActiveType(index);
+            setInnerQuests(applyFilter(quests, questionType));
+          }}>
+            {getTypeIcon(questionType)}
+            <S.TabTitle>{getCyrillicType(questionType)}</S.TabTitle>
+          </S.TabBtn>
+        </S.TabItem>)}
 
-            <S.QuestContent>
-              <S.QuestTitle>Склеп</S.QuestTitle>
+      </S.Tabs>
 
-              <S.QuestFeatures>
-                <S.QuestFeatureItem>
-                  <IconPerson />
-                  2–5 чел
-                </S.QuestFeatureItem>
-                <S.QuestFeatureItem>
-                  <IconPuzzle />
-                  сложный
-                </S.QuestFeatureItem>
-              </S.QuestFeatures>
-            </S.QuestContent>
-          </S.Quest>
-        </S.QuestItemLink>
-      </S.QuestItem>
+      <S.QuestsList>
 
-      <S.QuestItem>
-        <S.QuestItemLink to="/quest">
-          <S.Quest>
-            <S.QuestImage
-              src="img/preview-maniac.jpg"
-              width="344"
-              height="232"
-              alt="квест Маньяк"
-            />
+        {!isLoading && innerQuests.map((quest: QuestModel, index) =>
+          <S.QuestItem key={`${index}-${quest.id}`}>
+            <S.QuestItemLink to={`/quest/${quest.id}`}>
+              <S.Quest>
+                <S.QuestImage
+                  src={`/${quest.coverImg}`}
+                  width='344'
+                  height='232'
+                  alt='квест Маньяк'
+                />
 
-            <S.QuestContent>
-              <S.QuestTitle>Маньяк</S.QuestTitle>
+                <S.QuestContent>
+                  <S.QuestTitle>{quest.title}</S.QuestTitle>
 
-              <S.QuestFeatures>
-                <S.QuestFeatureItem>
-                  <IconPerson />
-                  3–6 чел
-                </S.QuestFeatureItem>
-                <S.QuestFeatureItem>
-                  <IconPuzzle />
-                  средний
-                </S.QuestFeatureItem>
-              </S.QuestFeatures>
-            </S.QuestContent>
-          </S.Quest>
-        </S.QuestItemLink>
-      </S.QuestItem>
+                  <S.QuestFeatures>
+                    <S.QuestFeatureItem>
+                      <IconPerson />
+                      {`${quest.peopleCount[0]}–${quest.peopleCount[1]} чел`}
 
-      <S.QuestItem>
-        <S.QuestItemLink to="/quest">
-          <S.Quest>
-            <S.QuestImage
-              src="img/preview-ritual.jpg"
-              width="344"
-              height="232"
-              alt="квест Ритуал"
-            />
+                    </S.QuestFeatureItem>
+                    <S.QuestFeatureItem>
+                      <IconPuzzle />
+                      {getCyrillicLevel(quest.level)}
+                    </S.QuestFeatureItem>
+                  </S.QuestFeatures>
+                </S.QuestContent>
+              </S.Quest>
+            </S.QuestItemLink>
+          </S.QuestItem>,
+        )}
 
-            <S.QuestContent>
-              <S.QuestTitle>Ритуал</S.QuestTitle>
+      </S.QuestsList>
+    </>);
+};
 
-              <S.QuestFeatures>
-                <S.QuestFeatureItem>
-                  <IconPerson />
-                  3–5 чел
-                </S.QuestFeatureItem>
-                <S.QuestFeatureItem>
-                  <IconPuzzle />
-                  легкий
-                </S.QuestFeatureItem>
-              </S.QuestFeatures>
-            </S.QuestContent>
-          </S.Quest>
-        </S.QuestItemLink>
-      </S.QuestItem>
+const mapStateToProps = (state: StateModel) => {
 
-      <S.QuestItem>
-        <S.QuestItemLink to="/quest">
-          <S.Quest>
-            <S.QuestImage
-              src="img/preview-old-ceil.jpg"
-              width="344"
-              height="232"
-              alt="квест История призраков"
-            />
+  return {
+    quests: getQuests(state),
+    errorMsg: getErrorMsg(state),
+    isResponseReceived: getIsResponseReceived(state),
+  };
+};
 
-            <S.QuestContent>
-              <S.QuestTitle>История призраков</S.QuestTitle>
+const mapDispatchToProps = (dispatch: any) => ({
+  getQuests() {
+    dispatch(Operation.getQuests());
+  },
+});
 
-              <S.QuestFeatures>
-                <S.QuestFeatureItem>
-                  <IconPerson />
-                  5–6 чел
-                </S.QuestFeatureItem>
-                <S.QuestFeatureItem>
-                  <IconPuzzle />
-                  легкий
-                </S.QuestFeatureItem>
-              </S.QuestFeatures>
-            </S.QuestContent>
-          </S.Quest>
-        </S.QuestItemLink>
-      </S.QuestItem>
-
-      <S.QuestItem>
-        <S.QuestItemLink to="/quest">
-          <S.Quest>
-            <S.QuestImage
-              src="img/preview-final-frontier.jpg"
-              width="344"
-              height="232"
-              alt="квест Тайны старого особняка"
-            />
-
-            <S.QuestContent>
-              <S.QuestTitle>Тайны старого особняка</S.QuestTitle>
-
-              <S.QuestFeatures>
-                <S.QuestFeatureItem>
-                  <IconPerson />
-                  2–3 чел
-                </S.QuestFeatureItem>
-                <S.QuestFeatureItem>
-                  <IconPuzzle />
-                  легкий
-                </S.QuestFeatureItem>
-              </S.QuestFeatures>
-            </S.QuestContent>
-          </S.Quest>
-        </S.QuestItemLink>
-      </S.QuestItem>
-
-      <S.QuestItem>
-        <S.QuestItemLink to="/quest">
-          <S.Quest>
-            <S.QuestImage
-              src="img/preview-house-in-the-woods.jpg"
-              width="344"
-              height="232"
-              alt="квест Хижина в лесу"
-            />
-
-            <S.QuestContent>
-              <S.QuestTitle>Хижина в лесу</S.QuestTitle>
-
-              <S.QuestFeatures>
-                <S.QuestFeatureItem>
-                  <IconPerson />
-                  4–7 чел
-                </S.QuestFeatureItem>
-                <S.QuestFeatureItem>
-                  <IconPuzzle />
-                  средний
-                </S.QuestFeatureItem>
-              </S.QuestFeatures>
-            </S.QuestContent>
-          </S.Quest>
-        </S.QuestItemLink>
-      </S.QuestItem>
-    </S.QuestsList>
-  </>
-);
-
-export default QuestsCatalog;
+export default connect(mapStateToProps, mapDispatchToProps)(QuestsCatalog);

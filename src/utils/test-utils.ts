@@ -1,4 +1,7 @@
 import { QuestLevel, QuestModel, QuestType } from './utils';
+import { createApi } from '../api';
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
 
 
 export const mockQuests: QuestModel[]  = [
@@ -73,3 +76,16 @@ export const mockQuests: QuestModel[]  = [
 ;
 
 
+export const getTestStore = () => {
+  const initialState = {
+    quests: mockQuests,
+    currentQuest: mockQuests[1],
+    errorMsg: ''
+  };
+  const reducer = (state = initialState) => {
+    return state;
+  };
+  const api = createApi();
+
+  return createStore(reducer, applyMiddleware(thunk.withExtraArgument(api)));
+};

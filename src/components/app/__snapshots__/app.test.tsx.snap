@@ -1,0 +1,575 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App successfully rendered 1`] = `
+Array [
+  "",
+  Array [
+    <header
+      className="sc-pVTFL cyOVn"
+    >
+      <div
+        className="sc-gsDKAQ dEliar sc-jrQzAO iDPSeT"
+      >
+        <a
+          className="sc-kDTinF fEliR"
+        >
+          <img
+            alt="Логотип Escape Room"
+            className="sc-egiyK"
+            height="50"
+            src="logo.svg"
+            width="134"
+          />
+        </a>
+        <nav
+          className="sc-crHmcD"
+        >
+          <ul
+            className="sc-bqiRlB gmJdaa"
+          >
+            <li
+              className="sc-ksdxgE inUVAZ"
+            >
+              <a
+                className="sc-hBUSln bjEjAu"
+                href="/"
+                onClick={[Function]}
+              >
+                Квесты
+              </a>
+            </li>
+            <li
+              className="sc-ksdxgE inUVAZ"
+            >
+              <a
+                className="sc-hBUSln jFYCoy"
+                href="/"
+                onClick={[Function]}
+              >
+                Новичкам
+              </a>
+            </li>
+            <li
+              className="sc-ksdxgE inUVAZ"
+            >
+              <a
+                className="sc-hBUSln jFYCoy"
+                href="/"
+                onClick={[Function]}
+              >
+                Отзывы
+              </a>
+            </li>
+            <li
+              className="sc-ksdxgE inUVAZ"
+            >
+              <a
+                className="sc-hBUSln jFYCoy"
+                href="/"
+                onClick={[Function]}
+              >
+                Акции
+              </a>
+            </li>
+            <li
+              className="sc-ksdxgE inUVAZ"
+            >
+              <a
+                className="sc-hBUSln jFYCoy"
+                href="/contacts"
+                onClick={[Function]}
+              >
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <a
+          className="sc-fotOHu cVznvU"
+          href="tel:88003335599"
+        >
+          8 (800) 333-55-99
+        </a>
+      </div>
+    </header>,
+    <main
+      className="sc-gsDKAQ dEliar sc-ZOtfp dpvOtb"
+    >
+      <div
+        className="sc-fFeiMQ bKziXJ"
+      >
+        <h1
+          className="sc-ieecCq cMcvVY"
+        >
+          Выберите тематику
+        </h1>
+        <p
+          className="sc-bkkeKt iLBZUc"
+        >
+          квесты в Санкт-Петербурге
+        </p>
+      </div>
+      Array [
+        <ul
+          className="sc-eJwWfJ iHmuzh"
+        >
+          <li
+            className="sc-nVkyK cKFyGc"
+          >
+            <button
+              className="sc-hiwPVj gdVQJn"
+              type="button"
+            >
+              <svg>
+                icon-all-quests.svg
+              </svg>
+              <span
+                className="sc-ehCJOs cBMPAj"
+              >
+                Все квесты
+              </span>
+            </button>
+          </li>
+          <li
+            className="sc-nVkyK cKFyGc"
+          >
+            <button
+              className="sc-hiwPVj CTRNp"
+              type="button"
+            >
+              <svg>
+                icon-adventures.svg
+              </svg>
+              <span
+                className="sc-ehCJOs cBMPAj"
+              >
+                Приключения
+              </span>
+            </button>
+          </li>
+          <li
+            className="sc-nVkyK cKFyGc"
+          >
+            <button
+              className="sc-hiwPVj CTRNp"
+              type="button"
+            >
+              <svg>
+                icon-horrors.svg
+              </svg>
+              <span
+                className="sc-ehCJOs cBMPAj"
+              >
+                Ужасы
+              </span>
+            </button>
+          </li>
+          <li
+            className="sc-nVkyK cKFyGc"
+          >
+            <button
+              className="sc-hiwPVj CTRNp"
+              type="button"
+            >
+              <svg>
+                icon-mystic.svg
+              </svg>
+              <span
+                className="sc-ehCJOs cBMPAj"
+              >
+                Мистика
+              </span>
+            </button>
+          </li>
+          <li
+            className="sc-nVkyK cKFyGc"
+          >
+            <button
+              className="sc-hiwPVj CTRNp"
+              type="button"
+            >
+              <svg>
+                icon-detective.svg
+              </svg>
+              <span
+                className="sc-ehCJOs cBMPAj"
+              >
+                Детектив
+              </span>
+            </button>
+          </li>
+          <li
+            className="sc-nVkyK cKFyGc"
+          >
+            <button
+              className="sc-hiwPVj CTRNp"
+              type="button"
+            >
+              <svg>
+                icon-scifi.svg
+              </svg>
+              <span
+                className="sc-ehCJOs cBMPAj"
+              >
+                Sci-fi
+              </span>
+            </button>
+          </li>
+        </ul>,
+        <ul
+          className="sc-lcepkR fcDmIN"
+        >
+          <li
+            className="sc-gGCDDS"
+          >
+            <a
+              className="sc-clIzBv lnMeiB"
+              href="/quest"
+              onClick={[Function]}
+            >
+              <article
+                className="sc-faUpoM hhwigY"
+              >
+                <img
+                  alt="квест Склеп"
+                  className="sc-dvQaRk eVqXdR"
+                  height="232"
+                  src="img/preview-sklep.jpg"
+                  width="344"
+                />
+                <div
+                  className="sc-Galmp fSqBGf"
+                >
+                  <h2
+                    className="sc-fWCJzd kCIWjF"
+                  >
+                    Склеп
+                  </h2>
+                  <ul
+                    className="sc-TBWPX cCEZfW"
+                  >
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-person.svg
+                      </svg>
+                      2–5 чел
+                    </li>
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-puzzle.svg
+                      </svg>
+                      сложный
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </a>
+          </li>
+          <li
+            className="sc-gGCDDS"
+          >
+            <a
+              className="sc-clIzBv lnMeiB"
+              href="/quest"
+              onClick={[Function]}
+            >
+              <article
+                className="sc-faUpoM hhwigY"
+              >
+                <img
+                  alt="квест Маньяк"
+                  className="sc-dvQaRk eVqXdR"
+                  height="232"
+                  src="img/preview-maniac.jpg"
+                  width="344"
+                />
+                <div
+                  className="sc-Galmp fSqBGf"
+                >
+                  <h2
+                    className="sc-fWCJzd kCIWjF"
+                  >
+                    Маньяк
+                  </h2>
+                  <ul
+                    className="sc-TBWPX cCEZfW"
+                  >
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-person.svg
+                      </svg>
+                      3–6 чел
+                    </li>
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-puzzle.svg
+                      </svg>
+                      средний
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </a>
+          </li>
+          <li
+            className="sc-gGCDDS"
+          >
+            <a
+              className="sc-clIzBv lnMeiB"
+              href="/quest"
+              onClick={[Function]}
+            >
+              <article
+                className="sc-faUpoM hhwigY"
+              >
+                <img
+                  alt="квест Ритуал"
+                  className="sc-dvQaRk eVqXdR"
+                  height="232"
+                  src="img/preview-ritual.jpg"
+                  width="344"
+                />
+                <div
+                  className="sc-Galmp fSqBGf"
+                >
+                  <h2
+                    className="sc-fWCJzd kCIWjF"
+                  >
+                    Ритуал
+                  </h2>
+                  <ul
+                    className="sc-TBWPX cCEZfW"
+                  >
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-person.svg
+                      </svg>
+                      3–5 чел
+                    </li>
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-puzzle.svg
+                      </svg>
+                      легкий
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </a>
+          </li>
+          <li
+            className="sc-gGCDDS"
+          >
+            <a
+              className="sc-clIzBv lnMeiB"
+              href="/quest"
+              onClick={[Function]}
+            >
+              <article
+                className="sc-faUpoM hhwigY"
+              >
+                <img
+                  alt="квест История призраков"
+                  className="sc-dvQaRk eVqXdR"
+                  height="232"
+                  src="img/preview-old-ceil.jpg"
+                  width="344"
+                />
+                <div
+                  className="sc-Galmp fSqBGf"
+                >
+                  <h2
+                    className="sc-fWCJzd kCIWjF"
+                  >
+                    История призраков
+                  </h2>
+                  <ul
+                    className="sc-TBWPX cCEZfW"
+                  >
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-person.svg
+                      </svg>
+                      5–6 чел
+                    </li>
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-puzzle.svg
+                      </svg>
+                      легкий
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </a>
+          </li>
+          <li
+            className="sc-gGCDDS"
+          >
+            <a
+              className="sc-clIzBv lnMeiB"
+              href="/quest"
+              onClick={[Function]}
+            >
+              <article
+                className="sc-faUpoM hhwigY"
+              >
+                <img
+                  alt="квест Тайны старого особняка"
+                  className="sc-dvQaRk eVqXdR"
+                  height="232"
+                  src="img/preview-final-frontier.jpg"
+                  width="344"
+                />
+                <div
+                  className="sc-Galmp fSqBGf"
+                >
+                  <h2
+                    className="sc-fWCJzd kCIWjF"
+                  >
+                    Тайны старого особняка
+                  </h2>
+                  <ul
+                    className="sc-TBWPX cCEZfW"
+                  >
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-person.svg
+                      </svg>
+                      2–3 чел
+                    </li>
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-puzzle.svg
+                      </svg>
+                      легкий
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </a>
+          </li>
+          <li
+            className="sc-gGCDDS"
+          >
+            <a
+              className="sc-clIzBv lnMeiB"
+              href="/quest"
+              onClick={[Function]}
+            >
+              <article
+                className="sc-faUpoM hhwigY"
+              >
+                <img
+                  alt="квест Хижина в лесу"
+                  className="sc-dvQaRk eVqXdR"
+                  height="232"
+                  src="img/preview-house-in-the-woods.jpg"
+                  width="344"
+                />
+                <div
+                  className="sc-Galmp fSqBGf"
+                >
+                  <h2
+                    className="sc-fWCJzd kCIWjF"
+                  >
+                    Хижина в лесу
+                  </h2>
+                  <ul
+                    className="sc-TBWPX cCEZfW"
+                  >
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-person.svg
+                      </svg>
+                      4–7 чел
+                    </li>
+                    <li
+                      className="sc-jIkXHa dNA-DpB"
+                    >
+                      <svg>
+                        icon-puzzle.svg
+                      </svg>
+                      средний
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </a>
+          </li>
+        </ul>,
+      ]
+    </main>,
+    <footer
+      className="sc-dkPtRN cKqpWq"
+    >
+      <ul
+        className="sc-hKwDye cIBGNF"
+      >
+        <li
+          className="sc-eCImPb gamxB"
+        >
+          <a
+            className="sc-jRQBWg iUJxXW"
+            href="https://instagram.com"
+            target="_blank"
+          >
+            <svg
+              className="sc-gKclnd edxetw"
+            >
+              icon-instagram-hover.svg
+            </svg>
+            <span
+              className="sc-furwcr visually-hidden"
+            >
+              Инстаграм
+            </span>
+          </a>
+        </li>
+        <li
+          className="sc-eCImPb gamxB"
+        >
+          <a
+            className="sc-jRQBWg iUJxXW"
+            href="https://vk.com"
+            target="_blank"
+          >
+            <svg
+              className="sc-iCfMLu cgPhip"
+            >
+              icon-vk-hover.svg
+            </svg>
+            <span
+              className="sc-furwcr visually-hidden"
+            >
+              Вконтакте
+            </span>
+          </a>
+        </li>
+      </ul>
+    </footer>,
+  ],
+]
+`;

@@ -1,17 +1,23 @@
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
-import { reducer } from "./reducer/data-reducer";
+import { reducer } from "./reducer/reducer";
 import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
 import {Provider} from 'react-redux';
-
+import { configureStore } from '@reduxjs/toolkit'
 import App from './components/app/app';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createApi } from './api';
 
+
 const api = createApi();
 
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk.withExtraArgument(api))));
+const store = configureStore({
+   reducer,
+    middleware: [thunk.withExtraArgument(api)]
+});
+
+//const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk.withExtraArgument(api))));
 
 render(
   <StrictMode>
