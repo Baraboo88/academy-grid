@@ -2,6 +2,7 @@ import { QuestLevel, QuestModel, QuestType } from './utils';
 import { createApi } from '../api';
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
+import { ActiveTab } from '../reducer/reducer';
 
 
 export const mockQuests: QuestModel[]  = [
@@ -75,17 +76,27 @@ export const mockQuests: QuestModel[]  = [
   ]
 ;
 
+export const MOCK_TEXT = 'Some Simple Mock text';
+
+
+export const testInitialState = {
+  quests: mockQuests,
+  currentQuest: mockQuests[1],
+  errorMsg: '',
+  activeTab: ActiveTab.MAIN
+};
 
 export const getTestStore = () => {
-  const initialState = {
-    quests: mockQuests,
-    currentQuest: mockQuests[1],
-    errorMsg: ''
-  };
-  const reducer = (state = initialState) => {
+
+  const reducer = (state = testInitialState) => {
     return state;
   };
   const api = createApi();
 
   return createStore(reducer, applyMiddleware(thunk.withExtraArgument(api)));
+};
+
+
+export const findByTestAtr = (component:any, attr:any) => {
+  return component.find(`[data-test='${attr}']`).hostNodes();
 };

@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home successfully rendered 1`] = `
+Array [
+  <header
+    className="sc-papXJ fPxdaK"
+  >
+    <div
+      className="sc-gsnTZi gYBTar sc-jqUVSM fFLmDC"
+    >
+      <a
+        className="sc-kDDrLX epZeKA"
+      >
+        <img
+          alt="Логотип Escape Room"
+          className="sc-evZas"
+          height="50"
+          src="logo.svg"
+          width="134"
+        />
+      </a>
+      <nav
+        className="sc-crXcEl"
+      >
+        <ul
+          className="sc-breuTD jPIhDm"
+        >
+          <li
+            className="sc-ksZaOG eMnCjm"
+          >
+            <a
+              className="sc-hAZoDl ennuCG"
+              href="/"
+              onClick={[Function]}
+            >
+              Квесты
+            </a>
+          </li>
+          <li
+            className="sc-ksZaOG eMnCjm"
+          >
+            <a
+              className="sc-hAZoDl dxTTny"
+              data-test="test-header-link-click"
+              href="/"
+              onClick={[Function]}
+            >
+              Новичкам
+            </a>
+          </li>
+          <li
+            className="sc-ksZaOG eMnCjm"
+          >
+            <a
+              className="sc-hAZoDl dxTTny"
+              data-test="test-header-link-click"
+              href="/"
+              onClick={[Function]}
+            >
+              Отзывы
+            </a>
+          </li>
+          <li
+            className="sc-ksZaOG eMnCjm"
+          >
+            <a
+              className="sc-hAZoDl dxTTny"
+              data-test="test-header-link-click"
+              href="/"
+              onClick={[Function]}
+            >
+              Акции
+            </a>
+          </li>
+          <li
+            className="sc-ksZaOG eMnCjm"
+          >
+            <a
+              className="sc-hAZoDl dxTTny"
+              href="/contacts"
+              onClick={[Function]}
+            >
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a
+        className="sc-fnykZs iTMUdC"
+        href="tel:88003335599"
+      >
+        8 (800) 333-55-99
+      </a>
+    </div>
+  </header>,
+  <main
+    className="sc-gsnTZi gYBTar sc-kLLXSd gRIczu"
+  >
+    <div
+      className="sc-fEOsli locZMZ"
+    >
+      <h1
+        className="sc-idiyUo gywBFB"
+      >
+        Выберите тематику
+      </h1>
+      <p
+        className="sc-bjUoiL gcWQHV"
+      >
+        квесты в Санкт-Петербурге
+      </p>
+    </div>
+    Array [
+      "",
+      <ul
+        className="sc-dIouRR ktSduP"
+      >
+        <li
+          className="sc-hHLeRK hozFkD"
+        >
+          <button
+            className="sc-dmRaPn eOVNXn"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg>
+              icon-all-quests.svg
+            </svg>
+            <span
+              className="sc-kgflAQ dQJgqj"
+            >
+              Все квесты
+            </span>
+          </button>
+        </li>
+        <li
+          className="sc-hHLeRK hozFkD"
+        >
+          <button
+            className="sc-dmRaPn gSHbqd"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg>
+              icon-adventures.svg
+            </svg>
+            <span
+              className="sc-kgflAQ dQJgqj"
+            >
+              Приключения
+            </span>
+          </button>
+        </li>
+        <li
+          className="sc-hHLeRK hozFkD"
+        >
+          <button
+            className="sc-dmRaPn gSHbqd"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg>
+              icon-horrors.svg
+            </svg>
+            <span
+              className="sc-kgflAQ dQJgqj"
+            >
+              Ужасы
+            </span>
+          </button>
+        </li>
+        <li
+          className="sc-hHLeRK hozFkD"
+        >
+          <button
+            className="sc-dmRaPn gSHbqd"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg>
+              icon-scifi.svg
+            </svg>
+            <span
+              className="sc-kgflAQ dQJgqj"
+            >
+              Sci-fi
+            </span>
+          </button>
+        </li>
+        <li
+          className="sc-hHLeRK hozFkD"
+        >
+          <button
+            className="sc-dmRaPn gSHbqd"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg>
+              icon-detective.svg
+            </svg>
+            <span
+              className="sc-kgflAQ dQJgqj"
+            >
+              Детектив
+            </span>
+          </button>
+        </li>
+      </ul>,
+      <ul
+        className="sc-fLlhyt kIdqDf"
+      />,
+    ]
+  </main>,
+  <footer
+    className="sc-dkzDqf gGFyGx"
+  >
+    <ul
+      className="sc-hKMtZM dvVkby"
+    >
+      <li
+        className="sc-eCYdqJ czqCLT"
+      >
+        <a
+          className="sc-jSMfEi kUTMax"
+          href="https://instagram.com"
+          target="_blank"
+        >
+          <svg
+            className="sc-gKXOVf gjlNag"
+          >
+            icon-instagram-hover.svg
+          </svg>
+          <span
+            className="sc-ftvSup visually-hidden"
+          >
+            Инстаграм
+          </span>
+        </a>
+      </li>
+      <li
+        className="sc-eCYdqJ czqCLT"
+      >
+        <a
+          className="sc-jSMfEi kUTMax"
+          href="https://vk.com"
+          target="_blank"
+        >
+          <svg
+            className="sc-iBkjds geVfOS"
+          >
+            icon-vk-hover.svg
+          </svg>
+          <span
+            className="sc-ftvSup visually-hidden"
+          >
+            Вконтакте
+          </span>
+        </a>
+      </li>
+    </ul>
+  </footer>,
+]
+`;

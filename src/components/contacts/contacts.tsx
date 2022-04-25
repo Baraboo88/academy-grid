@@ -46,10 +46,7 @@ const Contacts = () => {
           </S.ContactsList>
 
           <S.ContactsMap>
-
-
             <ContactMap />
-
           </S.ContactsMap>
         </S.Contacts>
       </S.ContentWrapper>

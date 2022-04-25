@@ -20,30 +20,31 @@ interface MatchParams {
 interface DetailedQuestProps {
   currentQuest?: QuestModel | null;
   errorMsg?: string;
-  getQuest?: (id: number) => void;
+  onMount?: (id: number) => void;
   resetCurrentQuest: () => void;
 }
 
 
 const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchParams>> = (props) => {
 
-  const { currentQuest, errorMsg, getQuest, resetCurrentQuest,history } = props;
+  const { currentQuest, errorMsg, onMount, resetCurrentQuest,history } = props;
 
   useEffect(() => {
-    if (props.match.params.id) {
-      // @ts-ignore
-      getQuest(Number(props.match.params.id));
-    }
+    // @ts-ignore
+    onMount(Number(props.match.params.id));
+
     return () => {
       resetCurrentQuest();
     };
-  }, [props.match.params.id, getQuest]);
+
+  }, [props.match.params.id, onMount]);
 
   useEffect(() => {
     if(errorMsg === ErrorMsg.NOT_FOUNT){
       history.push(`/not-found`);
     }
   }, [errorMsg])
+
   useActiveTab(ActiveTab.MAIN);
 
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
@@ -128,7 +129,7 @@ const mapStateToProps = (state: StateModel) => {
 };
 
 const mapDispatchToProps = (dispatch: any) => ({
-  getQuest(id: number) {
+  onMount(id: number) {
     dispatch(Operation.getQuest(id));
   },
   resetCurrentQuest() {
@@ -138,3 +139,4 @@ const mapDispatchToProps = (dispatch: any) => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailedQuest);
+export {DetailedQuest};

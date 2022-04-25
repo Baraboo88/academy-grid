@@ -4,34 +4,178 @@ exports[`App successfully rendered 1`] = `
 Array [
   "",
   Array [
-    <header
-      className="sc-pVTFL cyOVn"
+    .c1 {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.c0 {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: rgba(26,26,26,0.9);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-height: 74px;
+  padding-top: 23px;
+  padding-right: 33px;
+  padding-bottom: 23px;
+  padding-left: 32px;
+}
+
+.c3 {
+  margin-right: 250px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  max-width: 600px;
+  margin: 0;
+  padding: 0;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  margin-bottom: -10px;
+  list-style: none;
+}
+
+.c5:not(:last-child) {
+  margin-right: 49px;
+  margin-bottom: 10px;
+}
+
+.c6 {
+  display: block;
+  max-width: 100px;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F0F0F0;
+  color: #F2890F;
+}
+
+.c6:focus,
+.c6:hover {
+  color: #F2890F;
+}
+
+.c7 {
+  display: block;
+  max-width: 100px;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F0F0F0;
+}
+
+.c7:focus,
+.c7:hover {
+  color: #F2890F;
+}
+
+.c8 {
+  margin-top: 17px;
+  margin-left: auto;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  color: #F0F0F0;
+  font-feature-settings: 'pnum' on,'lnum' on;
+}
+
+.c8:focus,
+.c8:hover {
+  color: #F2890F;
+}
+
+@media (max-width:1300px) {
+  .c3 {
+    margin-right: auto;
+  }
+}
+
+@media (max-width:1150px) {
+
+}
+
+@media (max-width:1110px) {
+
+}
+
+@media (max-width:1110px) {
+
+}
+
+@media (max-width:1150px) {
+
+}
+
+<header
+      className="c0"
     >
       <div
-        className="sc-gsDKAQ dEliar sc-jrQzAO iDPSeT"
+        className="c1 c2"
       >
         <a
-          className="sc-kDTinF fEliR"
+          className="c3"
         >
           <img
             alt="Логотип Escape Room"
-            className="sc-egiyK"
+            className=""
             height="50"
             src="logo.svg"
             width="134"
           />
         </a>
         <nav
-          className="sc-crHmcD"
+          className=""
         >
           <ul
-            className="sc-bqiRlB gmJdaa"
+            className="c4"
           >
             <li
-              className="sc-ksdxgE inUVAZ"
+              className="c5"
             >
               <a
-                className="sc-hBUSln bjEjAu"
+                className="c6"
                 href="/"
                 onClick={[Function]}
               >
@@ -39,10 +183,11 @@ Array [
               </a>
             </li>
             <li
-              className="sc-ksdxgE inUVAZ"
+              className="c5"
             >
               <a
-                className="sc-hBUSln jFYCoy"
+                className="c7"
+                data-test="test-header-link-click"
                 href="/"
                 onClick={[Function]}
               >
@@ -50,10 +195,11 @@ Array [
               </a>
             </li>
             <li
-              className="sc-ksdxgE inUVAZ"
+              className="c5"
             >
               <a
-                className="sc-hBUSln jFYCoy"
+                className="c7"
+                data-test="test-header-link-click"
                 href="/"
                 onClick={[Function]}
               >
@@ -61,10 +207,11 @@ Array [
               </a>
             </li>
             <li
-              className="sc-ksdxgE inUVAZ"
+              className="c5"
             >
               <a
-                className="sc-hBUSln jFYCoy"
+                className="c7"
+                data-test="test-header-link-click"
                 href="/"
                 onClick={[Function]}
               >
@@ -72,10 +219,10 @@ Array [
               </a>
             </li>
             <li
-              className="sc-ksdxgE inUVAZ"
+              className="c5"
             >
               <a
-                className="sc-hBUSln jFYCoy"
+                className="c7"
                 href="/contacts"
                 onClick={[Function]}
               >
@@ -85,484 +232,529 @@ Array [
           </ul>
         </nav>
         <a
-          className="sc-fotOHu cVznvU"
+          className="c8"
           href="tel:88003335599"
         >
           8 (800) 333-55-99
         </a>
       </div>
     </header>,
-    <main
-      className="sc-gsDKAQ dEliar sc-ZOtfp dpvOtb"
+    .c0 {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  margin-bottom: 48px;
+}
+
+.c4 {
+  margin: 0;
+  margin-bottom: 9px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 144%;
+  color: #F2890F;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-size: 64px;
+  line-height: 110%;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.c1 {
+  max-width: 1080px;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.c1:after {
+  content: '';
+  z-index: 4;
+  position: fixed;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 80px;
+  background: linear-gradient(180deg,rgba(19,18,18,0) 0%,#131212 100%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+@media (max-width:1300px) {
+
+}
+
+@media (max-width:1150px) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-width: initial;
+    padding-left: 32px;
+    padding-right: 33px;
+  }
+}
+
+@media (max-width:1110px) {
+
+}
+
+@media (max-width:1110px) {
+
+}
+
+@media (max-width:1150px) {
+
+}
+
+<main
+      className="c0 c1"
     >
       <div
-        className="sc-fFeiMQ bKziXJ"
+        className="c2"
       >
         <h1
-          className="sc-ieecCq cMcvVY"
+          className="c3"
         >
           Выберите тематику
         </h1>
         <p
-          className="sc-bkkeKt iLBZUc"
+          className="c4"
         >
           квесты в Санкт-Петербурге
         </p>
       </div>
       Array [
-        <ul
-          className="sc-eJwWfJ iHmuzh"
+        "",
+        .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 40px;
+  max-width: 190px;
+  margin-bottom: 20px;
+}
+
+.c1:not(:last-of-type) {
+  padding-right: 40px;
+  margin-right: 39px;
+  border-right: 1px solid rgba(255,255,255,0.32);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 140%;
+  -webkit-letter-spacing: -0.02em;
+  -moz-letter-spacing: -0.02em;
+  -ms-letter-spacing: -0.02em;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: #E6E6E6;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.c2 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c2:focus span,
+.c2:hover span {
+  border-bottom: 2px solid #F2890F;
+}
+
+.c2 span {
+  border-bottom: 2px solid #F2890F;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 140%;
+  -webkit-letter-spacing: -0.02em;
+  -moz-letter-spacing: -0.02em;
+  -ms-letter-spacing: -0.02em;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: #E6E6E6;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.c4 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c4:focus span,
+.c4:hover span {
+  border-bottom: 2px solid #F2890F;
+}
+
+.c3 {
+  margin-left: 13px;
+  padding-top: 4px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+@media (max-width:1300px) {
+
+}
+
+@media (max-width:1150px) {
+
+}
+
+@media (max-width:1110px) {
+  .c0 {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+  }
+}
+
+@media (max-width:1110px) {
+  .c1:not(:last-of-type) {
+    padding-right: 30px;
+    margin-right: 29px;
+  }
+}
+
+@media (max-width:1150px) {
+
+}
+
+<ul
+          className="c0"
         >
           <li
-            className="sc-nVkyK cKFyGc"
+            className="c1"
           >
             <button
-              className="sc-hiwPVj gdVQJn"
+              className="c2"
+              onClick={[Function]}
               type="button"
             >
               <svg>
                 icon-all-quests.svg
               </svg>
               <span
-                className="sc-ehCJOs cBMPAj"
+                className="c3"
               >
                 Все квесты
               </span>
             </button>
           </li>
           <li
-            className="sc-nVkyK cKFyGc"
+            className="c1"
           >
             <button
-              className="sc-hiwPVj CTRNp"
+              className="c4"
+              onClick={[Function]}
               type="button"
             >
               <svg>
                 icon-adventures.svg
               </svg>
               <span
-                className="sc-ehCJOs cBMPAj"
+                className="c3"
               >
                 Приключения
               </span>
             </button>
           </li>
           <li
-            className="sc-nVkyK cKFyGc"
+            className="c1"
           >
             <button
-              className="sc-hiwPVj CTRNp"
+              className="c4"
+              onClick={[Function]}
               type="button"
             >
               <svg>
                 icon-horrors.svg
               </svg>
               <span
-                className="sc-ehCJOs cBMPAj"
+                className="c3"
               >
                 Ужасы
               </span>
             </button>
           </li>
           <li
-            className="sc-nVkyK cKFyGc"
+            className="c1"
           >
             <button
-              className="sc-hiwPVj CTRNp"
-              type="button"
-            >
-              <svg>
-                icon-mystic.svg
-              </svg>
-              <span
-                className="sc-ehCJOs cBMPAj"
-              >
-                Мистика
-              </span>
-            </button>
-          </li>
-          <li
-            className="sc-nVkyK cKFyGc"
-          >
-            <button
-              className="sc-hiwPVj CTRNp"
-              type="button"
-            >
-              <svg>
-                icon-detective.svg
-              </svg>
-              <span
-                className="sc-ehCJOs cBMPAj"
-              >
-                Детектив
-              </span>
-            </button>
-          </li>
-          <li
-            className="sc-nVkyK cKFyGc"
-          >
-            <button
-              className="sc-hiwPVj CTRNp"
+              className="c4"
+              onClick={[Function]}
               type="button"
             >
               <svg>
                 icon-scifi.svg
               </svg>
               <span
-                className="sc-ehCJOs cBMPAj"
+                className="c3"
               >
                 Sci-fi
               </span>
             </button>
           </li>
-        </ul>,
-        <ul
-          className="sc-lcepkR fcDmIN"
-        >
           <li
-            className="sc-gGCDDS"
+            className="c1"
           >
-            <a
-              className="sc-clIzBv lnMeiB"
-              href="/quest"
+            <button
+              className="c4"
               onClick={[Function]}
+              type="button"
             >
-              <article
-                className="sc-faUpoM hhwigY"
+              <svg>
+                icon-detective.svg
+              </svg>
+              <span
+                className="c3"
               >
-                <img
-                  alt="квест Склеп"
-                  className="sc-dvQaRk eVqXdR"
-                  height="232"
-                  src="img/preview-sklep.jpg"
-                  width="344"
-                />
-                <div
-                  className="sc-Galmp fSqBGf"
-                >
-                  <h2
-                    className="sc-fWCJzd kCIWjF"
-                  >
-                    Склеп
-                  </h2>
-                  <ul
-                    className="sc-TBWPX cCEZfW"
-                  >
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-person.svg
-                      </svg>
-                      2–5 чел
-                    </li>
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-puzzle.svg
-                      </svg>
-                      сложный
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            </a>
-          </li>
-          <li
-            className="sc-gGCDDS"
-          >
-            <a
-              className="sc-clIzBv lnMeiB"
-              href="/quest"
-              onClick={[Function]}
-            >
-              <article
-                className="sc-faUpoM hhwigY"
-              >
-                <img
-                  alt="квест Маньяк"
-                  className="sc-dvQaRk eVqXdR"
-                  height="232"
-                  src="img/preview-maniac.jpg"
-                  width="344"
-                />
-                <div
-                  className="sc-Galmp fSqBGf"
-                >
-                  <h2
-                    className="sc-fWCJzd kCIWjF"
-                  >
-                    Маньяк
-                  </h2>
-                  <ul
-                    className="sc-TBWPX cCEZfW"
-                  >
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-person.svg
-                      </svg>
-                      3–6 чел
-                    </li>
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-puzzle.svg
-                      </svg>
-                      средний
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            </a>
-          </li>
-          <li
-            className="sc-gGCDDS"
-          >
-            <a
-              className="sc-clIzBv lnMeiB"
-              href="/quest"
-              onClick={[Function]}
-            >
-              <article
-                className="sc-faUpoM hhwigY"
-              >
-                <img
-                  alt="квест Ритуал"
-                  className="sc-dvQaRk eVqXdR"
-                  height="232"
-                  src="img/preview-ritual.jpg"
-                  width="344"
-                />
-                <div
-                  className="sc-Galmp fSqBGf"
-                >
-                  <h2
-                    className="sc-fWCJzd kCIWjF"
-                  >
-                    Ритуал
-                  </h2>
-                  <ul
-                    className="sc-TBWPX cCEZfW"
-                  >
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-person.svg
-                      </svg>
-                      3–5 чел
-                    </li>
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-puzzle.svg
-                      </svg>
-                      легкий
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            </a>
-          </li>
-          <li
-            className="sc-gGCDDS"
-          >
-            <a
-              className="sc-clIzBv lnMeiB"
-              href="/quest"
-              onClick={[Function]}
-            >
-              <article
-                className="sc-faUpoM hhwigY"
-              >
-                <img
-                  alt="квест История призраков"
-                  className="sc-dvQaRk eVqXdR"
-                  height="232"
-                  src="img/preview-old-ceil.jpg"
-                  width="344"
-                />
-                <div
-                  className="sc-Galmp fSqBGf"
-                >
-                  <h2
-                    className="sc-fWCJzd kCIWjF"
-                  >
-                    История призраков
-                  </h2>
-                  <ul
-                    className="sc-TBWPX cCEZfW"
-                  >
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-person.svg
-                      </svg>
-                      5–6 чел
-                    </li>
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-puzzle.svg
-                      </svg>
-                      легкий
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            </a>
-          </li>
-          <li
-            className="sc-gGCDDS"
-          >
-            <a
-              className="sc-clIzBv lnMeiB"
-              href="/quest"
-              onClick={[Function]}
-            >
-              <article
-                className="sc-faUpoM hhwigY"
-              >
-                <img
-                  alt="квест Тайны старого особняка"
-                  className="sc-dvQaRk eVqXdR"
-                  height="232"
-                  src="img/preview-final-frontier.jpg"
-                  width="344"
-                />
-                <div
-                  className="sc-Galmp fSqBGf"
-                >
-                  <h2
-                    className="sc-fWCJzd kCIWjF"
-                  >
-                    Тайны старого особняка
-                  </h2>
-                  <ul
-                    className="sc-TBWPX cCEZfW"
-                  >
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-person.svg
-                      </svg>
-                      2–3 чел
-                    </li>
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-puzzle.svg
-                      </svg>
-                      легкий
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            </a>
-          </li>
-          <li
-            className="sc-gGCDDS"
-          >
-            <a
-              className="sc-clIzBv lnMeiB"
-              href="/quest"
-              onClick={[Function]}
-            >
-              <article
-                className="sc-faUpoM hhwigY"
-              >
-                <img
-                  alt="квест Хижина в лесу"
-                  className="sc-dvQaRk eVqXdR"
-                  height="232"
-                  src="img/preview-house-in-the-woods.jpg"
-                  width="344"
-                />
-                <div
-                  className="sc-Galmp fSqBGf"
-                >
-                  <h2
-                    className="sc-fWCJzd kCIWjF"
-                  >
-                    Хижина в лесу
-                  </h2>
-                  <ul
-                    className="sc-TBWPX cCEZfW"
-                  >
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-person.svg
-                      </svg>
-                      4–7 чел
-                    </li>
-                    <li
-                      className="sc-jIkXHa dNA-DpB"
-                    >
-                      <svg>
-                        icon-puzzle.svg
-                      </svg>
-                      средний
-                    </li>
-                  </ul>
-                </div>
-              </article>
-            </a>
+                Детектив
+              </span>
+            </button>
           </li>
         </ul>,
+        .c0 {
+  display: grid;
+  grid-template-columns: repeat(3,344px);
+  gap: 32px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width:1300px) {
+
+}
+
+@media (max-width:1150px) {
+
+}
+
+@media (max-width:1110px) {
+
+}
+
+@media (max-width:1110px) {
+
+}
+
+@media (max-width:1150px) {
+  .c0 {
+    grid-template-columns: repeat(3,minmax(303px,1fr));
+  }
+}
+
+<ul
+          className="c0"
+        />,
       ]
     </main>,
-    <footer
-      className="sc-dkPtRN cKqpWq"
+    .c0 {
+  z-index: 5;
+  position: fixed;
+  bottom: 24px;
+  left: 32px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  max-width: 500px;
+  margin: 0;
+  margin-bottom: -7px;
+  padding: 0;
+  list-style: none;
+}
+
+.c2:not(:last-of-type) {
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+
+.c3 {
+  display: block;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 image {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.c4:focus image,
+.c4:hover image {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 circle {
+  fill: #c6c4c2;
+}
+
+.c5 path {
+  fill: #1A1A1A;
+}
+
+.c5:focus circle,
+.c5:hover circle {
+  fill: #4f779f;
+}
+
+.c5:focus path,
+.c5:hover path {
+  fill: white;
+}
+
+@media (max-width:1300px) {
+
+}
+
+@media (max-width:1150px) {
+
+}
+
+@media (max-width:1110px) {
+
+}
+
+@media (max-width:1110px) {
+
+}
+
+@media (max-width:1150px) {
+
+}
+
+<footer
+      className="c0"
     >
       <ul
-        className="sc-hKwDye cIBGNF"
+        className="c1"
       >
         <li
-          className="sc-eCImPb gamxB"
+          className="c2"
         >
           <a
-            className="sc-jRQBWg iUJxXW"
+            className="c3"
             href="https://instagram.com"
             target="_blank"
           >
             <svg
-              className="sc-gKclnd edxetw"
+              className="c4"
             >
               icon-instagram-hover.svg
             </svg>
             <span
-              className="sc-furwcr visually-hidden"
+              className="visually-hidden"
             >
               Инстаграм
             </span>
           </a>
         </li>
         <li
-          className="sc-eCImPb gamxB"
+          className="c2"
         >
           <a
-            className="sc-jRQBWg iUJxXW"
+            className="c3"
             href="https://vk.com"
             target="_blank"
           >
             <svg
-              className="sc-iCfMLu cgPhip"
+              className="c5"
             >
               icon-vk-hover.svg
             </svg>
             <span
-              className="sc-furwcr visually-hidden"
+              className="visually-hidden"
             >
               Вконтакте
             </span>

@@ -28,25 +28,25 @@ const Header: React.FC<HeaderProps> = (props) => {
         <S.Navigation>
           <S.Links>
             <S.LinkItem>
-              <S.Link isActiveLink={activeTab === ActiveTab.MAIN} to='/'>
+              <S.Link $isActiveLink={activeTab === ActiveTab.MAIN} to='/'>
                 Квесты
               </S.Link>
             </S.LinkItem>
 
-            <S.LinkItem onClick={otherClickHandler}>
-              <S.Link to='#'>Новичкам</S.Link>
+            <S.LinkItem >
+              <S.Link to='#' onClick={otherClickHandler} data-test="test-header-link-click">Новичкам</S.Link>
             </S.LinkItem>
 
-            <S.LinkItem onClick={otherClickHandler}>
-              <S.Link to='#'>Отзывы</S.Link>
+            <S.LinkItem >
+              <S.Link to='#' onClick={otherClickHandler} data-test="test-header-link-click">Отзывы</S.Link>
             </S.LinkItem>
 
-            <S.LinkItem onClick={otherClickHandler}>
-              <S.Link to='#'>Акции</S.Link>
+            <S.LinkItem  >
+              <S.Link to='#' onClick={otherClickHandler} data-test="test-header-link-click">Акции</S.Link>
             </S.LinkItem>
 
-            <S.LinkItem>
-              <S.Link isActiveLink={activeTab === ActiveTab.CONTACTS} to='/contacts'>Контакты</S.Link>
+            <S.LinkItem >
+              <S.Link  $isActiveLink={activeTab === ActiveTab.CONTACTS} to='/contacts'>Контакты</S.Link>
             </S.LinkItem>
           </S.Links>
         </S.Navigation>
@@ -70,3 +70,4 @@ const mapDispatchToProps = (dispatch: any) => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export {Header}

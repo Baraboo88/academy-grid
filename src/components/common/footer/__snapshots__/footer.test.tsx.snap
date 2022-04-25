@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer successfully rendered 1`] = `
+.c0 {
+  z-index: 5;
+  position: fixed;
+  bottom: 24px;
+  left: 32px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  max-width: 500px;
+  margin: 0;
+  margin-bottom: -7px;
+  padding: 0;
+  list-style: none;
+}
+
+.c2:not(:last-of-type) {
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+
+.c3 {
+  display: block;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 image {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.c4:focus image,
+.c4:hover image {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 circle {
+  fill: #c6c4c2;
+}
+
+.c5 path {
+  fill: #1A1A1A;
+}
+
+.c5:focus circle,
+.c5:hover circle {
+  fill: #4f779f;
+}
+
+.c5:focus path,
+.c5:hover path {
+  fill: white;
+}
+
+<footer
+  className="c0"
+>
+  <ul
+    className="c1"
+  >
+    <li
+      className="c2"
+    >
+      <a
+        className="c3"
+        href="https://instagram.com"
+        target="_blank"
+      >
+        <svg
+          className="c4"
+        >
+          icon-instagram-hover.svg
+        </svg>
+        <span
+          className="visually-hidden"
+        >
+          Инстаграм
+        </span>
+      </a>
+    </li>
+    <li
+      className="c2"
+    >
+      <a
+        className="c3"
+        href="https://vk.com"
+        target="_blank"
+      >
+        <svg
+          className="c5"
+        >
+          icon-vk-hover.svg
+        </svg>
+        <span
+          className="visually-hidden"
+        >
+          Вконтакте
+        </span>
+      </a>
+    </li>
+  </ul>
+</footer>
+`;

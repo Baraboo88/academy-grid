@@ -36,14 +36,11 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
 
   const [error, setError] = useState('');
   const [name, setName] = useState<string>('');
-  const [peopleCount, setPeopleCount] = useState<string>();
+  const [peopleCount, setPeopleCount] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const [isLegal, setIsLegal] = useState<boolean>(false);
 
   const formSubmitHandler = () => {
-    if (!isLegal) {
-      return;
-    }
     sendOrder({ peopleCount: Number(peopleCount), isLegal, phone, name });
   };
 
@@ -54,7 +51,7 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
   return (
     <S.BlockLayer>
       <S.Modal>
-        <S.ModalCloseBtn onClick={onBookingModalClose}>
+        <S.ModalCloseBtn onClick={onBookingModalClose} data-test='test-model-close'>
           <IconClose width='16' height='16' />
           <S.ModalCloseLabel>Закрыть окно</S.ModalCloseLabel>
         </S.ModalCloseBtn>
@@ -68,6 +65,7 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
             formSubmitHandler();
             }
           }
+          data-test="test-addOrder"
         >
           <S.BookingField>
             <S.BookingLabel htmlFor='booking-name'>Ваше Имя</S.BookingLabel>
@@ -175,3 +173,4 @@ const mapDispatchToProps = (dispatch: any) => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookingModal);
+export { BookingModal };

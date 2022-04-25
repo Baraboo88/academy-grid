@@ -1,0 +1,1241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailedQuest successfully rendered 1`] = `
+Array [
+  .c1 {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.c0 {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: rgba(26,26,26,0.9);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-height: 74px;
+  padding-top: 23px;
+  padding-right: 33px;
+  padding-bottom: 23px;
+  padding-left: 32px;
+}
+
+.c3 {
+  margin-right: 250px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  max-width: 600px;
+  margin: 0;
+  padding: 0;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  margin-bottom: -10px;
+  list-style: none;
+}
+
+.c5:not(:last-child) {
+  margin-right: 49px;
+  margin-bottom: 10px;
+}
+
+.c6 {
+  display: block;
+  max-width: 100px;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F0F0F0;
+  color: #F2890F;
+}
+
+.c6:focus,
+.c6:hover {
+  color: #F2890F;
+}
+
+.c7 {
+  display: block;
+  max-width: 100px;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F0F0F0;
+}
+
+.c7:focus,
+.c7:hover {
+  color: #F2890F;
+}
+
+.c8 {
+  margin-top: 17px;
+  margin-left: auto;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  color: #F0F0F0;
+  font-feature-settings: 'pnum' on,'lnum' on;
+}
+
+.c8:focus,
+.c8:hover {
+  color: #F2890F;
+}
+
+@media (max-width:1300px) {
+  .c3 {
+    margin-right: auto;
+  }
+}
+
+<header
+    className="c0"
+  >
+    <div
+      className="c1 c2"
+    >
+      <a
+        className="c3"
+      >
+        <img
+          alt="Логотип Escape Room"
+          className=""
+          height="50"
+          src="logo.svg"
+          width="134"
+        />
+      </a>
+      <nav
+        className=""
+      >
+        <ul
+          className="c4"
+        >
+          <li
+            className="c5"
+          >
+            <a
+              className="c6"
+              href="/"
+              onClick={[Function]}
+            >
+              Квесты
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              className="c7"
+              data-test="test-header-link-click"
+              href="/"
+              onClick={[Function]}
+            >
+              Новичкам
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              className="c7"
+              data-test="test-header-link-click"
+              href="/"
+              onClick={[Function]}
+            >
+              Отзывы
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              className="c7"
+              data-test="test-header-link-click"
+              href="/"
+              onClick={[Function]}
+            >
+              Акции
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              className="c7"
+              href="/contacts"
+              onClick={[Function]}
+            >
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a
+        className="c8"
+        href="tel:88003335599"
+      >
+        8 (800) 333-55-99
+      </a>
+    </div>
+  </header>,
+  .c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 0;
+  padding-top: 22px;
+  padding-right: 47px;
+  padding-bottom: 23px;
+  padding-left: 48px;
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 20px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #F2890F;
+  border: none;
+  border-radius: 65px;
+  cursor: pointer;
+}
+
+.c11:focus,
+.c11:hover {
+  background-color: #F39425;
+}
+
+.c11:active {
+  opacity: 0.8;
+}
+
+.c0 {
+  max-width: 556px;
+  margin-top: 149px;
+  margin-bottom: 149px;
+  margin-left: 43.92vw;
+}
+
+.c1 {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.c2 {
+  z-index: 2;
+  position: relative;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  margin-bottom: 29px;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-size: 92px;
+  line-height: 95%;
+  font-weight: 900;
+  -webkit-letter-spacing: -0.03em;
+  -moz-letter-spacing: -0.03em;
+  -ms-letter-spacing: -0.03em;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.c5 {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  padding-left: 7px;
+  font-size: 14px;
+  line-height: 144%;
+  color: #F2890F;
+}
+
+.c6 {
+  padding-left: 32px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 36px;
+  max-width: 150px;
+  max-height: 65px;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+.c8:not(:last-of-type) {
+  margin-right: 24px;
+  padding-right: 24px;
+  border-right: 1px solid rgba(255,255,255,0.36);
+}
+
+.c8 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c9 {
+  margin-left: 9px;
+  font-size: 14px;
+  line-height: 144%;
+  font-weight: 400;
+  color: #E6E6E6;
+}
+
+.c10 {
+  margin: 0;
+  margin-bottom: 45px;
+  padding: 0;
+  line-height: 150%;
+  color: #E6E6E6;
+  -webkit-letter-spacing: 0.013em;
+  -moz-letter-spacing: 0.013em;
+  -ms-letter-spacing: 0.013em;
+  letter-spacing: 0.013em;
+}
+
+.c12 {
+  margin-left: 2px;
+}
+
+@media (max-width:1300px) {
+
+}
+
+<main
+    className="c0"
+  >
+    <img
+      alt="Квест Склеп"
+      className="c1"
+      height="768"
+      src="/img/cover-sklep.jpg"
+      width="1366"
+    />
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <h1
+          className="c4"
+        >
+          Склеп
+        </h1>
+        <p
+          className="c5"
+        >
+          Ужасы
+        </p>
+      </div>
+      <div
+        className="c6"
+      >
+        <ul
+          className="c7"
+        >
+          <li
+            className="c8"
+          >
+            <svg
+              height="20"
+              width="20"
+            >
+              icon-clock.svg
+            </svg>
+            <span
+              className="c9"
+            >
+              90 мин
+            </span>
+          </li>
+          <li
+            className="c8"
+          >
+            <svg
+              height="24"
+              width="19"
+            >
+              icon-person.svg
+            </svg>
+            <span
+              className="c9"
+            >
+              2–5 чел
+            </span>
+          </li>
+          <li
+            className="c8"
+          >
+            <svg
+              height="24"
+              width="24"
+            >
+              icon-puzzle.svg
+            </svg>
+            <span
+              className="c9"
+            >
+              сложный
+            </span>
+          </li>
+        </ul>
+        <p
+          className="c10"
+        >
+          Средневековое кладбище таит в себе много страшных тайн. Местные жители говорят, что в склепе похоронен граф вампир, который по ночам выходит на охоту, чтобы испить человеческой крови. Через час солнце опустится за горизонт, успеете ли вы убить вампира и выбраться из склепа?
+        </p>
+        <button
+          className="c11 c12"
+          onClick={[Function]}
+          type="button"
+        >
+          Забронировать
+        </button>
+      </div>
+    </div>
+  </main>,
+  .c0 {
+  z-index: 5;
+  position: fixed;
+  bottom: 24px;
+  left: 32px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  max-width: 500px;
+  margin: 0;
+  margin-bottom: -7px;
+  padding: 0;
+  list-style: none;
+}
+
+.c2:not(:last-of-type) {
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+
+.c3 {
+  display: block;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 image {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.c4:focus image,
+.c4:hover image {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 circle {
+  fill: #c6c4c2;
+}
+
+.c5 path {
+  fill: #1A1A1A;
+}
+
+.c5:focus circle,
+.c5:hover circle {
+  fill: #4f779f;
+}
+
+.c5:focus path,
+.c5:hover path {
+  fill: white;
+}
+
+@media (max-width:1300px) {
+
+}
+
+<footer
+    className="c0"
+  >
+    <ul
+      className="c1"
+    >
+      <li
+        className="c2"
+      >
+        <a
+          className="c3"
+          href="https://instagram.com"
+          target="_blank"
+        >
+          <svg
+            className="c4"
+          >
+            icon-instagram-hover.svg
+          </svg>
+          <span
+            className="visually-hidden"
+          >
+            Инстаграм
+          </span>
+        </a>
+      </li>
+      <li
+        className="c2"
+      >
+        <a
+          className="c3"
+          href="https://vk.com"
+          target="_blank"
+        >
+          <svg
+            className="c5"
+          >
+            icon-vk-hover.svg
+          </svg>
+          <span
+            className="visually-hidden"
+          >
+            Вконтакте
+          </span>
+        </a>
+      </li>
+    </ul>
+  </footer>,
+]
+`;
+
+exports[`Header successfully rendered 1`] = `
+Array [
+  .c1 {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.c0 {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: rgba(26,26,26,0.9);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-height: 74px;
+  padding-top: 23px;
+  padding-right: 33px;
+  padding-bottom: 23px;
+  padding-left: 32px;
+}
+
+.c3 {
+  margin-right: 250px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  max-width: 600px;
+  margin: 0;
+  padding: 0;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  margin-bottom: -10px;
+  list-style: none;
+}
+
+.c5:not(:last-child) {
+  margin-right: 49px;
+  margin-bottom: 10px;
+}
+
+.c6 {
+  display: block;
+  max-width: 100px;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F0F0F0;
+  color: #F2890F;
+}
+
+.c6:focus,
+.c6:hover {
+  color: #F2890F;
+}
+
+.c7 {
+  display: block;
+  max-width: 100px;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #F0F0F0;
+}
+
+.c7:focus,
+.c7:hover {
+  color: #F2890F;
+}
+
+.c8 {
+  margin-top: 17px;
+  margin-left: auto;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  color: #F0F0F0;
+  font-feature-settings: 'pnum' on,'lnum' on;
+}
+
+.c8:focus,
+.c8:hover {
+  color: #F2890F;
+}
+
+@media (max-width:1300px) {
+  .c3 {
+    margin-right: auto;
+  }
+}
+
+<header
+    className="c0"
+  >
+    <div
+      className="c1 c2"
+    >
+      <a
+        className="c3"
+      >
+        <img
+          alt="Логотип Escape Room"
+          className=""
+          height="50"
+          src="logo.svg"
+          width="134"
+        />
+      </a>
+      <nav
+        className=""
+      >
+        <ul
+          className="c4"
+        >
+          <li
+            className="c5"
+          >
+            <a
+              className="c6"
+              href="/"
+              onClick={[Function]}
+            >
+              Квесты
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              className="c7"
+              data-test="test-header-link-click"
+              href="/"
+              onClick={[Function]}
+            >
+              Новичкам
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              className="c7"
+              data-test="test-header-link-click"
+              href="/"
+              onClick={[Function]}
+            >
+              Отзывы
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              className="c7"
+              data-test="test-header-link-click"
+              href="/"
+              onClick={[Function]}
+            >
+              Акции
+            </a>
+          </li>
+          <li
+            className="c5"
+          >
+            <a
+              className="c7"
+              href="/contacts"
+              onClick={[Function]}
+            >
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a
+        className="c8"
+        href="tel:88003335599"
+      >
+        8 (800) 333-55-99
+      </a>
+    </div>
+  </header>,
+  .c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 0;
+  padding-top: 22px;
+  padding-right: 47px;
+  padding-bottom: 23px;
+  padding-left: 48px;
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 20px;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #F2890F;
+  border: none;
+  border-radius: 65px;
+  cursor: pointer;
+}
+
+.c11:focus,
+.c11:hover {
+  background-color: #F39425;
+}
+
+.c11:active {
+  opacity: 0.8;
+}
+
+.c0 {
+  max-width: 556px;
+  margin-top: 149px;
+  margin-bottom: 149px;
+  margin-left: 43.92vw;
+}
+
+.c1 {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.c2 {
+  z-index: 2;
+  position: relative;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  margin-bottom: 29px;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-size: 92px;
+  line-height: 95%;
+  font-weight: 900;
+  -webkit-letter-spacing: -0.03em;
+  -moz-letter-spacing: -0.03em;
+  -ms-letter-spacing: -0.03em;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.c5 {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  padding-left: 7px;
+  font-size: 14px;
+  line-height: 144%;
+  color: #F2890F;
+}
+
+.c6 {
+  padding-left: 32px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 36px;
+  max-width: 150px;
+  max-height: 65px;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+.c8:not(:last-of-type) {
+  margin-right: 24px;
+  padding-right: 24px;
+  border-right: 1px solid rgba(255,255,255,0.36);
+}
+
+.c8 svg {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c9 {
+  margin-left: 9px;
+  font-size: 14px;
+  line-height: 144%;
+  font-weight: 400;
+  color: #E6E6E6;
+}
+
+.c10 {
+  margin: 0;
+  margin-bottom: 45px;
+  padding: 0;
+  line-height: 150%;
+  color: #E6E6E6;
+  -webkit-letter-spacing: 0.013em;
+  -moz-letter-spacing: 0.013em;
+  -ms-letter-spacing: 0.013em;
+  letter-spacing: 0.013em;
+}
+
+.c12 {
+  margin-left: 2px;
+}
+
+@media (max-width:1300px) {
+
+}
+
+<main
+    className="c0"
+  >
+    <img
+      alt="Квест Склеп"
+      className="c1"
+      height="768"
+      src="/img/cover-sklep.jpg"
+      width="1366"
+    />
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <h1
+          className="c4"
+        >
+          Склеп
+        </h1>
+        <p
+          className="c5"
+        >
+          Ужасы
+        </p>
+      </div>
+      <div
+        className="c6"
+      >
+        <ul
+          className="c7"
+        >
+          <li
+            className="c8"
+          >
+            <svg
+              height="20"
+              width="20"
+            >
+              icon-clock.svg
+            </svg>
+            <span
+              className="c9"
+            >
+              90 мин
+            </span>
+          </li>
+          <li
+            className="c8"
+          >
+            <svg
+              height="24"
+              width="19"
+            >
+              icon-person.svg
+            </svg>
+            <span
+              className="c9"
+            >
+              2–5 чел
+            </span>
+          </li>
+          <li
+            className="c8"
+          >
+            <svg
+              height="24"
+              width="24"
+            >
+              icon-puzzle.svg
+            </svg>
+            <span
+              className="c9"
+            >
+              сложный
+            </span>
+          </li>
+        </ul>
+        <p
+          className="c10"
+        >
+          Средневековое кладбище таит в себе много страшных тайн. Местные жители говорят, что в склепе похоронен граф вампир, который по ночам выходит на охоту, чтобы испить человеческой крови. Через час солнце опустится за горизонт, успеете ли вы убить вампира и выбраться из склепа?
+        </p>
+        <button
+          className="c11 c12"
+          onClick={[Function]}
+          type="button"
+        >
+          Забронировать
+        </button>
+      </div>
+    </div>
+  </main>,
+  .c0 {
+  z-index: 5;
+  position: fixed;
+  bottom: 24px;
+  left: 32px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  max-width: 500px;
+  margin: 0;
+  margin-bottom: -7px;
+  padding: 0;
+  list-style: none;
+}
+
+.c2:not(:last-of-type) {
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+
+.c3 {
+  display: block;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 image {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.c4:focus image,
+.c4:hover image {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 circle {
+  fill: #c6c4c2;
+}
+
+.c5 path {
+  fill: #1A1A1A;
+}
+
+.c5:focus circle,
+.c5:hover circle {
+  fill: #4f779f;
+}
+
+.c5:focus path,
+.c5:hover path {
+  fill: white;
+}
+
+@media (max-width:1300px) {
+
+}
+
+<footer
+    className="c0"
+  >
+    <ul
+      className="c1"
+    >
+      <li
+        className="c2"
+      >
+        <a
+          className="c3"
+          href="https://instagram.com"
+          target="_blank"
+        >
+          <svg
+            className="c4"
+          >
+            icon-instagram-hover.svg
+          </svg>
+          <span
+            className="visually-hidden"
+          >
+            Инстаграм
+          </span>
+        </a>
+      </li>
+      <li
+        className="c2"
+      >
+        <a
+          className="c3"
+          href="https://vk.com"
+          target="_blank"
+        >
+          <svg
+            className="c5"
+          >
+            icon-vk-hover.svg
+          </svg>
+          <span
+            className="visually-hidden"
+          >
+            Вконтакте
+          </span>
+        </a>
+      </li>
+    </ul>
+  </footer>,
+]
+`;
