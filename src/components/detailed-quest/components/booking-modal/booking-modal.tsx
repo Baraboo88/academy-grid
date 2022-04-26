@@ -1,52 +1,36 @@
 import * as S from './booking-modal.styled';
 import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
-import React, { useEffect, useState } from 'react';
-import { ActionCreator, Operation } from '../../../../reducer/reducer';
-import { connect } from 'react-redux';
-import { OrderModel, StateModel } from '../../../../utils/utils';
-import { getErrorMsg, getIsOrderSent } from '../../../../reducer/selectors';
+import React from 'react';
 import { AlertMsg } from '../../../home/home.styled';
 
 interface BookingModalProps {
+  name: string;
+  peopleCount: string;
+  phone: string;
+  isLegal: boolean;
+  modalError: string;
+  onNameChange: (name: string) => void;
+  onPeopleCountChange: (peopleCount: string) => void;
+  onPhoneChange: (phone: string) => void;
+  onIsLegalChange: () => void;
   onBookingModalClose: () => void;
-  isOrderSent: boolean;
-  errorMsg: string;
-  sendOrder: (order: OrderModel) => void;
-  setIsOrderSent: (isOrderSent: boolean) => void;
+  onFormSubmit: () => void;
+
 }
 
 const BookingModal: React.FC<BookingModalProps> = (props) => {
-  const { onBookingModalClose, isOrderSent, errorMsg, sendOrder,setIsOrderSent  } = props;
-
-  useEffect(() => {
-    if (isOrderSent) {
-      setName('');
-      setPeopleCount('');
-      setPhone('');
-      setIsLegal(false);
-      onBookingModalClose();
-    }
-    if(errorMsg) {
-      setError(errorMsg);
-    }
-    return () => {
-      setIsOrderSent(false);
-    }
-  }, [isOrderSent, errorMsg, onBookingModalClose, setIsOrderSent]);
-
-  const [error, setError] = useState('');
-  const [name, setName] = useState<string>('');
-  const [peopleCount, setPeopleCount] = useState<string>('');
-  const [phone, setPhone] = useState<string>('');
-  const [isLegal, setIsLegal] = useState<boolean>(false);
-
-  const onFormSubmit = () => {
-    sendOrder({ peopleCount: Number(peopleCount), isLegal, phone, name });
-  };
-
-  const onChangeLegal = () => {
-    setIsLegal(!isLegal);
-  };
+  const {
+    onBookingModalClose, name,
+    peopleCount,
+    phone,
+    isLegal,
+    modalError,
+    onNameChange,
+    onPeopleCountChange,
+    onPhoneChange,
+    onIsLegalChange,
+    onFormSubmit
+  } = props;
 
   return (
     <S.BlockLayer>
@@ -63,9 +47,9 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
           onSubmit={(evt) => {
             evt.preventDefault();
             onFormSubmit();
-            }
           }
-          data-test="test-addOrder"
+          }
+          data-test='test-submit'
         >
           <S.BookingField>
             <S.BookingLabel htmlFor='booking-name'>Ваше Имя</S.BookingLabel>
@@ -77,10 +61,10 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
               required
               value={name}
               onChange={(evt) => {
-                setName(evt.target.value);
-                setError('');
+                onNameChange(evt.target.value);
               }
               }
+              data-test='test-name-changed'
             />
           </S.BookingField>
           <S.BookingField>
@@ -95,10 +79,11 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
               required
               value={phone}
               onChange={(evt) => {
-                setPhone(evt.target.value);
-                setError('');
+                onPhoneChange(evt.target.value);
+
               }
               }
+              data-test='test-phone-changed'
             />
           </S.BookingField>
           <S.BookingField>
@@ -113,14 +98,14 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
               required
               value={peopleCount}
               onChange={(evt) => {
-                setPeopleCount(evt.target.value);
-                setError('');
+                onPeopleCountChange(evt.target.value);
               }}
+              data-test='test-people-count-changed'
             />
           </S.BookingField>
-          {error && (
+          {modalError && (
             <AlertMsg>
-              {error}
+              {modalError}
             </AlertMsg>
           )}
           <S.BookingSubmit type='submit'>Отправить заявку</S.BookingSubmit>
@@ -131,7 +116,8 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
               name='booking-legal'
               required
               checked={isLegal}
-              onChange={onChangeLegal}
+              onChange={onIsLegalChange}
+              data-test='test-is-legal-changed'
             />
 
             <S.BookingCheckboxLabel
@@ -154,23 +140,4 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
 };
 
 
-const mapStateToProps = (state: StateModel) => {
-  return {
-    isOrderSent: getIsOrderSent(state),
-    errorMsg: getErrorMsg(state),
-  };
-};
-
-
-const mapDispatchToProps = (dispatch: any) => ({
-  sendOrder(order: OrderModel) {
-    dispatch(Operation.sendOrder(order));
-  },
-  setIsOrderSent(isOrderSent: boolean) {
-    dispatch(ActionCreator.setIsOrderSent(isOrderSent))
-  }
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(BookingModal);
-export { BookingModal };
+export default BookingModal;

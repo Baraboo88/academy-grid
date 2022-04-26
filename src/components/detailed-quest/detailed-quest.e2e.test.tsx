@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { DetailedQuest } from './detailed-quest';
 import { BrowserRouter } from '../common/common';
-import { getTestStore, mockQuests } from '../../utils/test-utils';
+import { findByTestAtr, getTestStore, mockQuests } from '../../utils/test-utils';
 import { appTheme } from '../app/common';
 import { ErrorMsg } from '../../reducer/reducer';
 
@@ -18,8 +18,10 @@ describe(`DetailedQuest e2e`, () => {
   const mockHistory = { push: jest.fn() };
   const mockResetCurrentQuest = jest.fn();
   const mockOnMount = jest.fn();
+  const mockSendOrder = jest.fn();
+  const mockSetIsOrderSent = jest.fn();
   // @ts-ignore
-  let app;
+  let app:any;
   const routeComponentPropsMock = {
     history: mockHistory as any,
     location: {} as any,
@@ -32,7 +34,7 @@ describe(`DetailedQuest e2e`, () => {
 
   beforeEach(() =>{
       app = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
-      theme={appTheme}><DetailedQuest onMount={mockOnMount}
+      theme={appTheme}><DetailedQuest setIsOrderSent={mockSetIsOrderSent} isOrderSent={true} sendOrder={mockSendOrder} onMount={mockOnMount}
                                       resetCurrentQuest={mockResetCurrentQuest}
                                       currentQuest={mockQuests[0]} {...routeComponentPropsMock} errorMsg={ErrorMsg.NotFound}/></ThemeProvider></BrowserRouter></Provider>);
 
@@ -53,5 +55,10 @@ describe(`DetailedQuest e2e`, () => {
     expect(mockHistory.push).toHaveBeenCalledTimes(1);
     expect(mockHistory.push).toHaveBeenCalledWith("/not-found");
   })
+
+  it(`Should addOrder works correctly`, () => {
+    expect(mockSetIsOrderSent).toHaveBeenCalledTimes(1);
+    expect(mockSetIsOrderSent).toHaveBeenCalledWith(false);
+  });
 });
 

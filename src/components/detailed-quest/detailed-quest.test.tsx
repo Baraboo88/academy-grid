@@ -9,15 +9,18 @@ import { DetailedQuest } from './detailed-quest';
 import { BrowserRouter } from '../common/common';
 import { getTestStore, mockQuests } from '../../utils/test-utils';
 import { appTheme } from '../app/common';
+import { ErrorMsg } from '../../reducer/reducer';
 
 
 Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 
 
 it(`DetailedQuest successfully rendered`, () => {
-  const mockHistory = { push: jest.fn };
-  const mockOnMount = jest.fn();
+  const mockHistory = { push: jest.fn() };
   const mockResetCurrentQuest = jest.fn();
+  const mockOnMount = jest.fn();
+  const mockSendOrder = jest.fn();
+  const mockSetIsOrderSent = jest.fn();
 
   const routeComponentPropsMock = {
     history: mockHistory as any,
@@ -30,8 +33,9 @@ it(`DetailedQuest successfully rendered`, () => {
   };
 
   const tree = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
-    theme={appTheme}><DetailedQuest onMount={mockOnMount} resetCurrentQuest={mockResetCurrentQuest}  {...routeComponentPropsMock}
-                                    currentQuest={mockQuests[0]}  /></ThemeProvider></BrowserRouter></Provider>);
+    theme={appTheme}><DetailedQuest setIsOrderSent={mockSetIsOrderSent} isOrderSent={true} sendOrder={mockSendOrder} onMount={mockOnMount}
+                                    resetCurrentQuest={mockResetCurrentQuest}
+                                    currentQuest={mockQuests[0]} {...routeComponentPropsMock} errorMsg={''}/></ThemeProvider></BrowserRouter></Provider>);
   expect(toJson(tree, { mode: `deep` })).toMatchSnapshot();
 });
 

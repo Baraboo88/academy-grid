@@ -277,19 +277,7 @@ exports[`BookingModal successfully rendered 1`] = `
     <button
       className="c2"
       data-test="test-model-close"
-      onClick={
-        [MockFunction] {
-          "calls": Array [
-            Array [],
-          ],
-          "results": Array [
-            Object {
-              "type": "return",
-              "value": undefined,
-            },
-          ],
-        }
-      }
+      onClick={[MockFunction]}
     >
       <svg
         height="16"
@@ -311,7 +299,7 @@ exports[`BookingModal successfully rendered 1`] = `
     <form
       action="https://echo.htmlacademy.ru"
       className="c4"
-      data-test="test-addOrder"
+      data-test="test-submit"
       id="booking-form"
       method="post"
       onSubmit={[Function]}
@@ -327,13 +315,14 @@ exports[`BookingModal successfully rendered 1`] = `
         </label>
         <input
           className="c7"
+          data-test="test-name-changed"
           id="booking-name"
           name="booking-name"
           onChange={[Function]}
           placeholder="Имя"
           required={true}
           type="text"
-          value=""
+          value="Mock Name"
         />
       </p>
       <p
@@ -347,13 +336,14 @@ exports[`BookingModal successfully rendered 1`] = `
         </label>
         <input
           className="c7"
+          data-test="test-phone-changed"
           id="booking-phone"
           name="booking-phone"
           onChange={[Function]}
           placeholder="Телефон"
           required={true}
           type="tel"
-          value=""
+          value="975093"
         />
       </p>
       <p
@@ -367,13 +357,14 @@ exports[`BookingModal successfully rendered 1`] = `
         </label>
         <input
           className="c7"
+          data-test="test-people-count-changed"
           id="booking-people"
           name="booking-people"
           onChange={[Function]}
           placeholder="Количество участников"
           required={true}
           type="number"
-          value=""
+          value="3"
         />
       </p>
       <button
@@ -386,11 +377,12 @@ exports[`BookingModal successfully rendered 1`] = `
         className="c10"
       >
         <input
-          checked={false}
+          checked={true}
           className="c11 visually-hidden"
+          data-test="test-is-legal-changed"
           id="booking-legal"
           name="booking-legal"
-          onChange={[Function]}
+          onChange={[MockFunction]}
           required={true}
           type="checkbox"
         />
