@@ -55,11 +55,11 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
     return null;
   }
 
-  const bookingModalCloseHandler = () => {
+  const onBookingModalClose = () => {
     setIsBookingModalOpened(false);
   };
 
-  const bookingBtnClickHandler = () => {
+  const onBookingBtnClick = () => {
     setIsBookingModalOpened(true);
   };
 
@@ -110,13 +110,13 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
               {currentQuest.description}
             </S.QuestDescription>
 
-            <S.QuestBookingBtn onClick={bookingBtnClickHandler}>
+            <S.QuestBookingBtn onClick={onBookingBtnClick}>
               Забронировать
             </S.QuestBookingBtn>
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal onBookingModalClose={bookingModalCloseHandler} />}
+        {isBookingModalOpened && <BookingModal onBookingModalClose={onBookingModalClose} />}
       </S.Main>}
     </MainLayout>
   );

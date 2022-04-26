@@ -17,7 +17,7 @@ Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 it(`DetailedQuest successfully rendered`, () => {
   const mockHistory = { push: jest.fn };
   const mockOnMount = jest.fn();
-  const mockResetCurrentQuestHandler = jest.fn();
+  const mockResetCurrentQuest = jest.fn();
 
   const routeComponentPropsMock = {
     history: mockHistory as any,
@@ -30,7 +30,7 @@ it(`DetailedQuest successfully rendered`, () => {
   };
 
   const tree = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
-    theme={appTheme}><DetailedQuest onMount={mockOnMount} resetCurrentQuest={mockResetCurrentQuestHandler}  {...routeComponentPropsMock}
+    theme={appTheme}><DetailedQuest onMount={mockOnMount} resetCurrentQuest={mockResetCurrentQuest}  {...routeComponentPropsMock}
                                     currentQuest={mockQuests[0]}  /></ThemeProvider></BrowserRouter></Provider>);
   expect(toJson(tree, { mode: `deep` })).toMatchSnapshot();
 });

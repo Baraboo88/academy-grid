@@ -16,41 +16,36 @@ Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 
 describe(`BookingModal e2e`, () => {
 
-  const mockModalCloseHandler = jest.fn();
-  const mockSendOrderHandler = jest.fn();
-  const mockSetIsOrderSentHandler = jest.fn();
+  const onMockModalClose = jest.fn();
+  const mockSendOrder = jest.fn();
+  const mockSetIsOrderSent = jest.fn();
 
   let app:any;
 
   beforeEach(() => {
     app = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
-      theme={appTheme}><BookingModal setIsOrderSent={mockSetIsOrderSentHandler} errorMsg={MOCK_BOOKING_MODAL_ERROR}
-                                     onBookingModalClose={mockModalCloseHandler} isOrderSent={MOCK_IS_ORDER_SENT}
-                                     sendOrder={mockSendOrderHandler} /></ThemeProvider></BrowserRouter></Provider>);
+      theme={appTheme}><BookingModal setIsOrderSent={mockSetIsOrderSent} errorMsg={MOCK_BOOKING_MODAL_ERROR}
+                                     onBookingModalClose={onMockModalClose} isOrderSent={MOCK_IS_ORDER_SENT}
+                                     sendOrder={mockSendOrder} /></ThemeProvider></BrowserRouter></Provider>);
   })
 
 
   it(`Should addOrder works correctly`, () => {
     const formField = findByTestAtr(app, `test-addOrder`);
     formField.simulate(`submit`);
-    expect(mockSendOrderHandler).toHaveBeenCalledTimes(1);
+    expect(mockSendOrder).toHaveBeenCalledTimes(1);
   });
 
   it(`Should Model close work correctly`, () => {
     const formField =  findByTestAtr(app, `test-model-close`);
     formField.simulate(`click`);
-    expect(mockModalCloseHandler).toHaveBeenCalledTimes(2);
+    expect(onMockModalClose).toHaveBeenCalledTimes(2);
   });
 
-  it(`Should Model close work correctly`, () => {
-    const formField =  findByTestAtr(app, `test-model-close`);
-    formField.simulate(`click`);
-    expect(mockModalCloseHandler).toHaveBeenCalledTimes(2);
-  });
 
   it(`Should IsOrderSent reset`, () => {
     app.unmount();
-    expect(mockSetIsOrderSentHandler).toHaveBeenCalledTimes(1);
-    expect(mockSetIsOrderSentHandler).toHaveBeenCalledWith(false);
+    expect(mockSetIsOrderSent).toHaveBeenCalledTimes(1);
+    expect(mockSetIsOrderSent).toHaveBeenCalledWith(false);
   });
 });

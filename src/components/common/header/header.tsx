@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = (props) => {
 
     const { activeTab, setActiveTab } = props;
 
-    const otherClickHandler = () => {
+    const onOtherClick = () => {
       setActiveTab(ActiveTab.Other);
     };
 
@@ -34,15 +34,15 @@ const Header: React.FC<HeaderProps> = (props) => {
             </S.LinkItem>
 
             <S.LinkItem >
-              <S.Link to='#' onClick={otherClickHandler} data-test="test-header-link-click">Новичкам</S.Link>
+              <S.Link to='#' onClick={onOtherClick} data-test="test-header-link-click">Новичкам</S.Link>
             </S.LinkItem>
 
             <S.LinkItem >
-              <S.Link to='#' onClick={otherClickHandler} data-test="test-header-link-click">Отзывы</S.Link>
+              <S.Link to='#' onClick={onOtherClick} data-test="test-header-link-click">Отзывы</S.Link>
             </S.LinkItem>
 
             <S.LinkItem  >
-              <S.Link to='#' onClick={otherClickHandler} data-test="test-header-link-click">Акции</S.Link>
+              <S.Link to='#' onClick={onOtherClick} data-test="test-header-link-click">Акции</S.Link>
             </S.LinkItem>
 
             <S.LinkItem >

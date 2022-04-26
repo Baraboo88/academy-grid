@@ -40,11 +40,11 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
   const [phone, setPhone] = useState<string>('');
   const [isLegal, setIsLegal] = useState<boolean>(false);
 
-  const formSubmitHandler = () => {
+  const onFormSubmit = () => {
     sendOrder({ peopleCount: Number(peopleCount), isLegal, phone, name });
   };
 
-  const changeLegalHandler = () => {
+  const onChangeLegal = () => {
     setIsLegal(!isLegal);
   };
 
@@ -62,7 +62,7 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
           id='booking-form'
           onSubmit={(evt) => {
             evt.preventDefault();
-            formSubmitHandler();
+            onFormSubmit();
             }
           }
           data-test="test-addOrder"
@@ -131,7 +131,7 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
               name='booking-legal'
               required
               checked={isLegal}
-              onChange={changeLegalHandler}
+              onChange={onChangeLegal}
             />
 
             <S.BookingCheckboxLabel

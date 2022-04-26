@@ -19,12 +19,12 @@ export const MOCK_BOOKING_MODAL_ERROR = ''
 
 it(`BookingModal successfully rendered`, () => {
 
-  const mockModalCloseHandler = jest.fn();
-  const mockSendOrderHandler = jest.fn();
+  const onMockModalClose = jest.fn();
+  const mockSendOrder = jest.fn();
   const mockSetIsOrderSent = jest.fn();
   const tree = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
     theme={appTheme}><BookingModal setIsOrderSent={mockSetIsOrderSent} errorMsg={MOCK_BOOKING_MODAL_ERROR}
-                                   onBookingModalClose={mockModalCloseHandler} isOrderSent={MOCK_IS_ORDER_SENT}
-                                   sendOrder={mockSendOrderHandler} /></ThemeProvider></BrowserRouter></Provider>);
+                                   onBookingModalClose={onMockModalClose} isOrderSent={MOCK_IS_ORDER_SENT}
+                                   sendOrder={mockSendOrder} /></ThemeProvider></BrowserRouter></Provider>);
   expect(toJson(tree, { mode: `deep` })).toMatchSnapshot();
 });

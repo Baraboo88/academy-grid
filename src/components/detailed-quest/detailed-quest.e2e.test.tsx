@@ -16,7 +16,7 @@ Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 describe(`DetailedQuest e2e`, () => {
 
   const mockHistory = { push: jest.fn() };
-  const mockResetCurrentQuestHandler = jest.fn();
+  const mockResetCurrentQuest = jest.fn();
   const mockOnMount = jest.fn();
   // @ts-ignore
   let app;
@@ -33,7 +33,7 @@ describe(`DetailedQuest e2e`, () => {
   beforeEach(() =>{
       app = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
       theme={appTheme}><DetailedQuest onMount={mockOnMount}
-                                      resetCurrentQuest={mockResetCurrentQuestHandler}
+                                      resetCurrentQuest={mockResetCurrentQuest}
                                       currentQuest={mockQuests[0]} {...routeComponentPropsMock} errorMsg={ErrorMsg.NotFound}/></ThemeProvider></BrowserRouter></Provider>);
 
   })
@@ -46,7 +46,7 @@ describe(`DetailedQuest e2e`, () => {
   it(`Should resetCurrentQuest successfully working`, () => {
     // @ts-ignore
     app.unmount();
-    expect(mockResetCurrentQuestHandler).toHaveBeenCalledTimes(1);
+    expect(mockResetCurrentQuest).toHaveBeenCalledTimes(1);
   })
 
   it(`Should history push work if not found`, () => {
