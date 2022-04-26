@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     const { activeTab, setActiveTab } = props;
 
     const otherClickHandler = () => {
-      setActiveTab(ActiveTab.OTHER);
+      setActiveTab(ActiveTab.Other);
     };
 
     return <S.StyledHeader>
@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = (props) => {
         <S.Navigation>
           <S.Links>
             <S.LinkItem>
-              <S.Link $isActiveLink={activeTab === ActiveTab.MAIN} to='/'>
+              <S.Link $isActiveLink={activeTab === ActiveTab.Main} to='/'>
                 Квесты
               </S.Link>
             </S.LinkItem>
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             </S.LinkItem>
 
             <S.LinkItem >
-              <S.Link  $isActiveLink={activeTab === ActiveTab.CONTACTS} to='/contacts'>Контакты</S.Link>
+              <S.Link $isActiveLink={activeTab === ActiveTab.Contacts} to='/contacts'>Контакты</S.Link>
             </S.LinkItem>
           </S.Links>
         </S.Navigation>

@@ -1,22 +1,23 @@
 import { ActiveTab } from '../reducer/reducer';
 
 export enum QuestType {
-  ADVENTURES = 'adventures',
-  HORROR = 'horror',
-  MYSTIC = 'mystic',
-  DETECTIVE = 'detective'
+  Adventures = 'adventures',
+  Horror = 'horror',
+  Mystic = 'mystic',
+  Detective = 'detective',
+  SciFi='sci-fi'
 }
 
 export enum QuestLevel {
-  EASY = 'easy',
-  MEDIUM = 'medium',
-  HARD = 'hard'
+  Easy = 'easy',
+  Medium = 'medium',
+  Hard = 'hard'
 }
 
 export enum QuestDuration {
-  'SIXTY' = 60,
-  NINETY = 90,
-  ONE_TWO_ZERO = 120
+  Sixty = 60,
+  Ninety = 90,
+  OneTwoZero = 120
 }
 
 export interface QuestModel {
@@ -48,20 +49,13 @@ export interface StateModel {
 }
 
 
-export interface FilterModel {
-  name: string;
-  title: string;
-}
-
-export const Filters = {};
-
 export const getCyrillicLevel = (level: QuestLevel) => {
   switch (level) {
-    case QuestLevel.EASY:
+    case QuestLevel.Easy:
       return 'простой';
-    case QuestLevel.MEDIUM:
+    case QuestLevel.Medium:
       return 'средний';
-    case QuestLevel.HARD:
+    case QuestLevel.Hard:
       return 'сложный';
   }
   return '';
@@ -69,14 +63,16 @@ export const getCyrillicLevel = (level: QuestLevel) => {
 
 export const getCyrillicType = (questType: QuestType) => {
   switch (questType) {
-    case QuestType.ADVENTURES:
+    case QuestType.Adventures:
       return 'Приключения';
-    case QuestType.HORROR:
+    case QuestType.Horror:
       return 'Ужасы';
-    case QuestType.MYSTIC:
-      return 'Sci-fi';
-    case QuestType.DETECTIVE:
+    case QuestType.Mystic:
+      return 'Мистика';
+    case QuestType.Detective:
       return 'Детектив';
+    case QuestType.SciFi:
+      return 'Sci-fi';
   }
   return '';
 };

@@ -83,7 +83,7 @@ export const testInitialState = {
   quests: mockQuests,
   currentQuest: mockQuests[1],
   errorMsg: '',
-  activeTab: ActiveTab.MAIN
+  activeTab: ActiveTab.Main
 };
 
 export const getTestStore = () => {

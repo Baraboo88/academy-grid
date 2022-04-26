@@ -178,12 +178,12 @@ Array [
             type="button"
           >
             <svg>
-              icon-scifi.svg
+              icon-mystic.svg
             </svg>
             <span
               className="sc-kgflAQ dQJgqj"
             >
-              Sci-fi
+              Мистика
             </span>
           </button>
         </li>
@@ -202,6 +202,24 @@ Array [
               className="sc-kgflAQ dQJgqj"
             >
               Детектив
+            </span>
+          </button>
+        </li>
+        <li
+          className="sc-hHLeRK hozFkD"
+        >
+          <button
+            className="sc-dmRaPn gSHbqd"
+            onClick={[Function]}
+            type="button"
+          >
+            <svg>
+              icon-scifi.svg
+            </svg>
+            <span
+              className="sc-kgflAQ dQJgqj"
+            >
+              Sci-fi
             </span>
           </button>
         </li>

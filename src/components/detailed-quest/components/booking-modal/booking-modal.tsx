@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { ActionCreator, Operation } from '../../../../reducer/reducer';
 import { connect } from 'react-redux';
 import { OrderModel, StateModel } from '../../../../utils/utils';
-import { getCurrentQuest, getErrorMsg, getIsOrderSent } from '../../../../reducer/selectors';
+import { getErrorMsg, getIsOrderSent } from '../../../../reducer/selectors';
 import { AlertMsg } from '../../../home/home.styled';
 
 interface BookingModalProps {
@@ -32,7 +32,7 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
     return () => {
       setIsOrderSent(false);
     }
-  }, [isOrderSent, errorMsg]);
+  }, [isOrderSent, errorMsg, onBookingModalClose, setIsOrderSent]);
 
   const [error, setError] = useState('');
   const [name, setName] = useState<string>('');

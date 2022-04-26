@@ -1,67 +1,83 @@
 import { OrderModel, QuestModel, StateModel } from '../utils/utils';
 
-const BAD_REQUEST = 400;
+
+export enum ResponseStatus{
+  OK = 201,
+  BadRequest = 400,
+  NotFound = 404,
+
+}
+
 const NOT_FOUND_ERROR = 404;
 const ORDER_OK_STATUS = 201;
-export const ErrorMsg ={
-  OTHER: 'Something went wrong...',
-  DATA: 'Please check the data',
-  NOT_FOUNT: 'not-found'
+
+export enum ErrorMsg {
+  Other= 'Something went wrong...',
+  Data = 'Please check the data',
+  NotFound = 'not-found',
 }
 
-export enum ActiveTab{
-  MAIN, CONTACTS,OTHER
+export enum ActiveTab {
+  Main, Contacts, Other
 }
 
-export const Action = {
-  SET_QUESTS: 'set-quests',
-  SET_QUEST: 'set-quest',
-  SET_IS_ORDER_SENT: 'set-is-order-sent',
-  SET_ERROR: 'set-error',
-  SET_ACTIVE_TAB: 'set-active-tab'
-};
+export enum Action {
+  SetQuests = 'set-quests',
+  SetQuest = 'set-quest',
+  ResetQuest =  'reset-quest',
+  SetIsOrderSent = 'set-is-order-sent',
+  SetError = 'set-error',
+  SetIsResponseReceived = 'set-is-response-received',
+  SetActiveTab = 'set-active-tab',
+}
 
-const initialState:StateModel = {
+const initialState: StateModel = {
   quests: [],
   isResponseReceived: false,
   errorMsg: '',
-  activeTab: ActiveTab.MAIN
+  activeTab: ActiveTab.Main,
 };
 
+
+const resetIsResponseReceivedAndError=(dispatch:any) =>{
+  dispatch(ActionCreator.setError(''));
+  dispatch(ActionCreator.setIsResponseReceived(false));
+}
 
 export const Operation = {
 
   getQuests() {
-    return (dispatch:any, state:StateModel, api:any) => {
+    return (dispatch: any, state: StateModel, api: any) => {
+      resetIsResponseReceivedAndError(dispatch);
       api
         .get(`/quests`)
-        .then((response:any) => {
+        .then((response: any) => {
           dispatch(ActionCreator.setQuests(response.data));
         })
-        .catch((error:any) => {
-          if (error.response.status === BAD_REQUEST) {
-            dispatch(ActionCreator.setError(ErrorMsg.OTHER));
+        .catch((error: any) => {
+          if (error.response.status === ResponseStatus.BadRequest) {
+            dispatch(ActionCreator.setError(ErrorMsg.Other));
           }
           dispatch(ActionCreator.setError(error.message));
         });
     };
   },
 
-  getQuest(id:number) {
-    return (dispatch:any, state:StateModel, api:any) => {
+  getQuest(id: number) {
+    return (dispatch: any, state: StateModel, api: any) => {
+      resetIsResponseReceivedAndError(dispatch);
       api
         .get(`/quests/${id}`)
-        .then((response:any) => {
-          dispatch(ActionCreator.setQuest(response.data));
+        .then((response: any) => {
+                 dispatch(ActionCreator.setQuest(response.data));
         })
-        .catch((error:any) => {
+        .catch((error: any) => {
 
-          if (error.response.status === BAD_REQUEST) {
-            dispatch(ActionCreator.setError(ErrorMsg.OTHER));
-          } else if(error.response.status === NOT_FOUND_ERROR){
-            dispatch(ActionCreator.setError(ErrorMsg.NOT_FOUNT));
-          }
-          else {
+          if (error.response.status === ResponseStatus.BadRequest) {
+            dispatch(ActionCreator.setError(ErrorMsg.Other));
+          } else if (error.response.status === NOT_FOUND_ERROR) {
+            dispatch(ActionCreator.setError(ErrorMsg.NotFound));
+          } else {
             dispatch(ActionCreator.setError(error.message));
           }
 
@@ -69,21 +85,22 @@ export const Operation = {
     };
   },
 
-  sendOrder(order:OrderModel) {
-    return (dispatch:any, state:StateModel, api:any) => {
+  sendOrder(order: OrderModel) {
+    return (dispatch: any, state: StateModel, api: any) => {
+
       dispatch(ActionCreator.setError(''));
       api
         .post(`/orders`, order)
-        .then((response:any) => {
+        .then((response: any) => {
           if (response.status === ORDER_OK_STATUS) {
             dispatch(ActionCreator.setIsOrderSent(true));
           }
 
         })
-        .catch((error:any) => {
-          if (error.response.status === BAD_REQUEST) {
-            dispatch(ActionCreator.setError(ErrorMsg.NOT_FOUNT));
-          }else {
+        .catch((error: any) => {
+          if (error.response.status === ResponseStatus.BadRequest) {
+            dispatch(ActionCreator.setError(ErrorMsg.Other));
+          } else {
             dispatch(ActionCreator.setError(error.message));
           }
 
@@ -91,52 +108,65 @@ export const Operation = {
     };
   },
 
-}
+};
 
 export const ActionCreator = {
   setQuests(quests: QuestModel[]) {
-    return {type: Action.SET_QUESTS, payload: quests};
+    return { type: Action.SetQuests, payload: quests };
   },
   setQuest(quest: QuestModel | null) {
-    return {type: Action.SET_QUEST, payload: quest};
+    return { type: Action.SetQuest, payload: quest };
+  },
+  resetQuest(){
+    return { type: Action.ResetQuest};
   },
   setIsOrderSent(isOrderSent: boolean) {
-    return {type: Action.SET_IS_ORDER_SENT, payload: isOrderSent};
+    return { type: Action.SetIsOrderSent, payload: isOrderSent };
   },
   setError(error: string) {
-    return {type: Action.SET_ERROR, payload: error};
+    return { type: Action.SetError, payload: error };
   },
-  setActiveTab(tabIndex: ActiveTab){
-    return {type: Action.SET_ACTIVE_TAB, payload: tabIndex};
-  }
-}
+  setIsResponseReceived(isResponseReceived: boolean) {
+    return { type: Action.SetIsResponseReceived, payload: isResponseReceived };
+  },
+  setActiveTab(tabIndex: ActiveTab) {
+    return { type: Action.SetActiveTab, payload: tabIndex };
+  },
+};
 
 
-
-export const reducer = (state: StateModel = initialState, action:any) => {
+export const reducer = (state: StateModel = initialState, action: any) => {
   switch (action.type) {
-    case Action.SET_QUESTS:
+    case Action.SetQuests:
       return Object.assign({}, state, {
         quests: action.payload,
         isResponseReceived: true,
-        errorMsg: ''
+        errorMsg: '',
       });
-    case Action.SET_QUEST:
+    case Action.SetQuest:
       return Object.assign({}, state, {
         currentQuest: action.payload,
-        errorMsg: ''
+        isResponseReceived: true,
+        errorMsg: '',
       });
-    case Action.SET_IS_ORDER_SENT:
+    case Action.ResetQuest:
+      return Object.assign({}, state, {
+        currentQuest: null,
+        isResponseReceived: false,
+        errorMsg: '',
+      });
+    case Action.SetIsOrderSent:
       return Object.assign({}, state, {
         isOrderSent: action.payload,
         isResponseReceived: true,
-        errorMsg: ''
+        errorMsg: '',
       });
-    case Action.SET_ERROR:
-      return Object.assign({}, state, {errorMsg: action.payload});
-    case Action.SET_ACTIVE_TAB:
-      return Object.assign({}, state, {activeTab: action.payload});
-
+    case Action.SetError:
+      return Object.assign({}, state, { errorMsg: action.payload, isResponseReceived: true });
+    case Action.SetActiveTab:
+      return Object.assign({}, state, { activeTab: action.payload });
+    case Action.SetIsResponseReceived:
+      return Object.assign({}, state, { isResponseReceived: action.payload });
   }
   return state;
 };

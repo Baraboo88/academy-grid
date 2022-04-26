@@ -18,14 +18,14 @@ const App = () => (
     <S.GlobalStyle />
     <Router>
       <Switch>
-        <Route exact path="/quest/:id" component={DetailedQuest}/>
+        <Route exact path="/detailed-quest/:id" component={DetailedQuest}/>
         <Route exact path="/contacts">
           <Contacts />
         </Route>
-        <Route exact path="/">
+        <Route exact path="/" >
           <Home />
         </Route>
-        <Route path="/not-found">
+        <Route>
           <NotFound/>
         </Route>
       </Switch>

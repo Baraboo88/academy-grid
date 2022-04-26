@@ -30,22 +30,23 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
   const { currentQuest, errorMsg, onMount, resetCurrentQuest,history } = props;
 
   useEffect(() => {
-    // @ts-ignore
-    onMount(Number(props.match.params.id));
+
+      // @ts-ignore
+      onMount(Number(props.match.params.id));
 
     return () => {
       resetCurrentQuest();
     };
 
-  }, [props.match.params.id, onMount]);
+  }, [props.match.params.id, onMount, resetCurrentQuest, history]);
 
   useEffect(() => {
-    if(errorMsg === ErrorMsg.NOT_FOUNT){
+    if(errorMsg === ErrorMsg.NotFound){
       history.push(`/not-found`);
     }
-  }, [errorMsg])
+  }, [errorMsg, history])
 
-  useActiveTab(ActiveTab.MAIN);
+  useActiveTab(ActiveTab.Main);
 
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
@@ -58,7 +59,7 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
     setIsBookingModalOpened(false);
   };
 
-  const onBookingBtnClick = () => {
+  const bookingBtnClickHandler = () => {
     setIsBookingModalOpened(true);
   };
 
@@ -109,7 +110,7 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
               {currentQuest.description}
             </S.QuestDescription>
 
-            <S.QuestBookingBtn onClick={onBookingBtnClick}>
+            <S.QuestBookingBtn onClick={bookingBtnClickHandler}>
               Забронировать
             </S.QuestBookingBtn>
           </S.PageDescription>
@@ -133,7 +134,7 @@ const mapDispatchToProps = (dispatch: any) => ({
     dispatch(Operation.getQuest(id));
   },
   resetCurrentQuest() {
-    dispatch(ActionCreator.setQuest(null));
+    dispatch(ActionCreator.resetQuest());
   },
 });
 

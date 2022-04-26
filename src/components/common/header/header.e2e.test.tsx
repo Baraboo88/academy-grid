@@ -5,7 +5,7 @@ import EnzymeReactAdapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { ThemeProvider } from 'styled-components';
 import { Header } from './header';
 import { appTheme } from '../../app/common';
-import { findByTestAtr, getTestStore, testInitialState } from '../../../utils/test-utils';
+import { findByTestAtr, testInitialState } from '../../../utils/test-utils';
 import 'jest-styled-components';
 import { BrowserRouter } from '../common';
 

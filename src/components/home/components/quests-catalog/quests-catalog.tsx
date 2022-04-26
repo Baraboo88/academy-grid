@@ -24,39 +24,42 @@ import { AlertMsg } from '../../home.styled';
 
 interface QuestsCatalogProps {
   quests: QuestModel [];
-  getQuests: () => void;
+  onMount: () => void;
   isResponseReceived: boolean;
   errorMsg: string;
 }
 
 const QuestsCatalog: React.FC<QuestsCatalogProps> = (props) => {
-  const { quests, getQuests, isResponseReceived, errorMsg } = props;
-  const [error, setError] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [innerQuests, setInnerQuests] = useState<QuestModel []>([]);
+  const { quests, onMount, isResponseReceived, errorMsg } = props;
+
   useEffect(() => {
     if (isResponseReceived && errorMsg) {
       setError(errorMsg);
     }
     if (!isResponseReceived) {
-      getQuests();
+      onMount();
     } else {
       setIsLoading(false);
       setInnerQuests(quests);
     }
   }, [quests, getQuests, isResponseReceived, errorMsg]);
 
+  const [error, setError] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [innerQuests, setInnerQuests] = useState<QuestModel []>([]);
   const [activeType, setActiveType] = useState(-1);
 
   const getTypeIcon = (type: QuestType) => {
     switch (type) {
-      case QuestType.ADVENTURES:
+      case QuestType.Adventures:
         return <IconAdventures />;
-      case QuestType.DETECTIVE:
+      case QuestType.Detective:
         return <IconDetective />;
-      case QuestType.HORROR:
+      case QuestType.Horror:
         return <IconHorrors />;
-      case QuestType.MYSTIC:
+      case QuestType.Mystic:
+        return <IconMystic />;
+      case QuestType.SciFi:
         return <IconScifi />;
     }
   };
@@ -93,7 +96,7 @@ const QuestsCatalog: React.FC<QuestsCatalogProps> = (props) => {
 
         {!isLoading && innerQuests.map((quest: QuestModel, index) =>
           <S.QuestItem key={`${index}-${quest.id}`}>
-            <S.QuestItemLink to={`/quest/${quest.id}`}>
+            <S.QuestItemLink to={`/detailed-quest/${quest.id}`}>
               <S.Quest>
                 <S.QuestImage
                   src={`/${quest.coverImg}`}
@@ -136,7 +139,7 @@ const mapStateToProps = (state: StateModel) => {
 };
 
 const mapDispatchToProps = (dispatch: any) => ({
-  getQuests() {
+  onMount() {
     dispatch(Operation.getQuests());
   },
 });

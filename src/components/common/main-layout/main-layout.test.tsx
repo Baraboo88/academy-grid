@@ -7,7 +7,7 @@ import toJson from 'enzyme-to-json';
 
 import { ThemeProvider } from 'styled-components';
 import { appTheme } from '../../app/common';
-import { getTestStore, testInitialState } from '../../../utils/test-utils';
+import { getTestStore } from '../../../utils/test-utils';
 
 import { BrowserRouter } from '../common';
 import MainLayout from './main-layout';

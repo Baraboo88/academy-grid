@@ -2,17 +2,16 @@ import React from 'react';
 
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import Leaflet, { LatLngTuple } from 'leaflet';
-import contactsMap from '../../../assets/img/marker.png';
+import contactsMap from '../../../../assets/img/marker.png';
 
 const position:LatLngTuple = [59.968353, 30.317575]
 
 const icon = new Leaflet.Icon({
   iconUrl: contactsMap,
   iconAnchor: [23.79, 61.06],
-
 })
 
-const ContactMap = () => {
+const ContactsMap = () => {
   return (
 
     <MapContainer
@@ -32,4 +31,4 @@ const ContactMap = () => {
   );
 };
 
-export default ContactMap;
+export default ContactsMap;

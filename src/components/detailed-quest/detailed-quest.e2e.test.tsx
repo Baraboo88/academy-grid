@@ -1,5 +1,5 @@
 import * as Enzyme from 'enzyme';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import EnzymeReactAdapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
@@ -34,7 +34,7 @@ describe(`DetailedQuest e2e`, () => {
       app = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
       theme={appTheme}><DetailedQuest onMount={mockOnMount}
                                       resetCurrentQuest={mockResetCurrentQuestHandler}
-                                      currentQuest={mockQuests[0]} {...routeComponentPropsMock} errorMsg={ErrorMsg.NOT_FOUNT}/></ThemeProvider></BrowserRouter></Provider>);
+                                      currentQuest={mockQuests[0]} {...routeComponentPropsMock} errorMsg={ErrorMsg.NotFound}/></ThemeProvider></BrowserRouter></Provider>);
 
   })
 
@@ -49,7 +49,7 @@ describe(`DetailedQuest e2e`, () => {
     expect(mockResetCurrentQuestHandler).toHaveBeenCalledTimes(1);
   })
 
-  it(`Should push work if not found`, () => {
+  it(`Should history push work if not found`, () => {
     expect(mockHistory.push).toHaveBeenCalledTimes(1);
     expect(mockHistory.push).toHaveBeenCalledWith("/not-found");
   })

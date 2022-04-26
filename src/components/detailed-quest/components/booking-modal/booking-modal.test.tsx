@@ -14,12 +14,11 @@ import { BookingModal } from './booking-modal';
 
 Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 
-
-
+export const MOCK_IS_ORDER_SENT = true
+export const MOCK_BOOKING_MODAL_ERROR = ''
 
 it(`BookingModal successfully rendered`, () => {
-  const MOCK_IS_ORDER_SENT = true
-   const MOCK_BOOKING_MODAL_ERROR = ''
+
   const mockModalCloseHandler = jest.fn();
   const mockSendOrderHandler = jest.fn();
   const mockSetIsOrderSent = jest.fn();

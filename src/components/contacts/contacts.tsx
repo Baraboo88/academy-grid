@@ -1,13 +1,12 @@
 import { MainLayout, PageSubtext, PageTitle } from '../common/common';
-
 import * as S from './contacts.styled';
-import ContactMap from './contact-map/contact-map';
+import ContactsMap from './components/contact-map/contacts-map';
 import useActiveTab from '../../hooks/use-active-tab';
 import { ActiveTab } from '../../reducer/reducer';
 
 
 const Contacts = () => {
-  useActiveTab(ActiveTab.CONTACTS);
+  useActiveTab(ActiveTab.Contacts);
   return <MainLayout>
     <S.Main>
       <S.ContentWrapper>
@@ -46,7 +45,7 @@ const Contacts = () => {
           </S.ContactsList>
 
           <S.ContactsMap>
-            <ContactMap />
+            <ContactsMap />
           </S.ContactsMap>
         </S.Contacts>
       </S.ContentWrapper>

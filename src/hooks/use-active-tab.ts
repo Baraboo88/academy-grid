@@ -1,5 +1,5 @@
 import { ActionCreator, ActiveTab } from '../reducer/reducer';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 
 const useActiveTab = (activeTab:ActiveTab) => {

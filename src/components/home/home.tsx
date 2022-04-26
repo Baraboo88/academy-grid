@@ -5,7 +5,7 @@ import useActiveTab from '../../hooks/use-active-tab';
 import { ActiveTab } from '../../reducer/reducer';
 
 const HomePage = () => {
-  useActiveTab(ActiveTab.MAIN);
+  useActiveTab(ActiveTab.Main);
 
   return <MainLayout>
     <S.Main forwardedAs="main">

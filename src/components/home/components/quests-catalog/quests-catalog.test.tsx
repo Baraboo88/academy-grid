@@ -13,15 +13,14 @@ import { QuestsCatalog } from './quests-catalog';
 
 Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 
-export const MOCK_IS_RESPONSE_RECEIVED = true;
-export const MOCK_CATALOG_MODAL_ERROR = '';
-export const mockSetQuestsHandler = jest.fn();
-it(`BookingModal successfully rendered`, () => {
 
+
+it(`BookingModal successfully rendered`, () => {
+  const mockOnMount = jest.fn();
   const tree = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
     theme={appTheme}><QuestsCatalog quests={mockQuests}
-                                    getQuests={mockSetQuestsHandler}
-                                    isResponseReceived={MOCK_IS_RESPONSE_RECEIVED}
-                                    errorMsg={MOCK_CATALOG_MODAL_ERROR} /></ThemeProvider></BrowserRouter></Provider>);
+                                    onMount={mockOnMount}
+                                    isResponseReceived={true}
+                                    errorMsg={''} /></ThemeProvider></BrowserRouter></Provider>);
   expect(toJson(tree, { mode: `deep` })).toMatchSnapshot();
 });

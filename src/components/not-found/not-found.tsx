@@ -6,7 +6,7 @@ import { ActiveTab } from '../../reducer/reducer';
 
 
 const NotFound = () => {
-  useActiveTab(ActiveTab.OTHER);
+  useActiveTab(ActiveTab.Other);
 
   return (
    <MainLayout>
