@@ -2,7 +2,7 @@ import React from 'react';
 import { MainLayout } from 'components/common/common';
 import * as S from './not-found.styled';
 import useActiveTab from '../../hooks/use-active-tab';
-import { ActiveTab } from '../../reducer/reducer';
+import { ActiveTab } from '../../reducer/data/data-reducer';
 
 
 const NotFound = () => {

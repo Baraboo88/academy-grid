@@ -15,5 +15,5 @@ Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 it(`Contacts successfully rendered`, () => {
   const tree = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
     theme={appTheme}><Contacts /></ThemeProvider></BrowserRouter></Provider>);
-  expect(toJson(tree, { mode: `deep` })).toMatchSnapshot();
+   expect(toJson(tree, { mode: `deep` })).toMatchSnapshot();
 });

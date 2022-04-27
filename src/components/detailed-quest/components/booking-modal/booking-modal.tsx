@@ -15,7 +15,6 @@ interface BookingModalProps {
   onIsLegalChange: () => void;
   onBookingModalClose: () => void;
   onFormSubmit: () => void;
-
 }
 
 const BookingModal: React.FC<BookingModalProps> = (props) => {
@@ -47,7 +46,7 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
           onSubmit={(evt) => {
             evt.preventDefault();
             onFormSubmit();
-          }
+            }
           }
           data-test='test-submit'
         >
@@ -80,7 +79,6 @@ const BookingModal: React.FC<BookingModalProps> = (props) => {
               value={phone}
               onChange={(evt) => {
                 onPhoneChange(evt.target.value);
-
               }
               }
               data-test='test-phone-changed'

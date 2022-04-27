@@ -2,11 +2,13 @@ import { MainLayout, PageSubtext, PageTitle } from '../common/common';
 import * as S from './contacts.styled';
 import ContactsMap from './components/contact-map/contacts-map';
 import useActiveTab from '../../hooks/use-active-tab';
-import { ActiveTab } from '../../reducer/reducer';
+import { ActiveTab } from '../../reducer/data/data-reducer';
 
 
 const Contacts = () => {
+
   useActiveTab(ActiveTab.Contacts);
+
   return <MainLayout>
     <S.Main>
       <S.ContentWrapper>

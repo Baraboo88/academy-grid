@@ -9,8 +9,6 @@ import { DetailedQuest } from './detailed-quest';
 import { BrowserRouter } from '../common/common';
 import { getTestStore, mockQuests } from '../../utils/test-utils';
 import { appTheme } from '../app/common';
-import { ErrorMsg } from '../../reducer/reducer';
-
 
 Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 

@@ -8,7 +8,6 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
 import {
-  applyFilter,
   getCyrillicLevel,
   getCyrillicType,
   QuestModel,
@@ -16,8 +15,8 @@ import {
   StateModel,
 } from '../../../../utils/utils';
 import { connect } from 'react-redux';
-import { Operation } from '../../../../reducer/reducer';
-import { getErrorMsg, getIsResponseReceived, getQuests } from '../../../../reducer/selectors';
+import { DataOperation } from '../../../../reducer/data/data-reducer';
+import { getErrorMsg, getIsResponseReceived, getQuests } from '../../../../reducer/data/data-selectors';
 import React, { useEffect, useState } from 'react';
 import { AlertMsg } from '../../home.styled';
 
@@ -32,6 +31,11 @@ interface QuestsCatalogProps {
 const QuestsCatalog: React.FC<QuestsCatalogProps> = (props) => {
   const { quests, onMount, isResponseReceived, errorMsg } = props;
 
+  const [error, setError] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [innerQuests, setInnerQuests] = useState<QuestModel []>([]);
+  const [activeType, setActiveType] = useState(-1);
+
   useEffect(() => {
     if (isResponseReceived && errorMsg) {
       setError(errorMsg);
@@ -42,12 +46,8 @@ const QuestsCatalog: React.FC<QuestsCatalogProps> = (props) => {
       setIsLoading(false);
       setInnerQuests(quests);
     }
-  }, [quests, getQuests, isResponseReceived, errorMsg]);
+  }, [quests, onMount, isResponseReceived, errorMsg,]);
 
-  const [error, setError] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [innerQuests, setInnerQuests] = useState<QuestModel []>([]);
-  const [activeType, setActiveType] = useState(-1);
 
   const getTypeIcon = (type: QuestType) => {
     switch (type) {
@@ -64,6 +64,10 @@ const QuestsCatalog: React.FC<QuestsCatalogProps> = (props) => {
     }
   };
 
+  const onFilterClick = (index: number, filter: QuestType) => {
+    setActiveType(index);
+    setInnerQuests(quests.filter((quest) => quest.type === filter));
+  }
 
   return (
     <>
@@ -82,8 +86,7 @@ const QuestsCatalog: React.FC<QuestsCatalogProps> = (props) => {
         </S.TabItem>
         {Object.values(QuestType).map((questionType, index) => <S.TabItem key={`${index}-${questionType}`}>
           <S.TabBtn isActive={index === activeType} onClick={() => {
-            setActiveType(index);
-            setInnerQuests(applyFilter(quests, questionType));
+            onFilterClick(index, questionType);
           }}>
             {getTypeIcon(questionType)}
             <S.TabTitle>{getCyrillicType(questionType)}</S.TabTitle>
@@ -140,7 +143,7 @@ const mapStateToProps = (state: StateModel) => {
 
 const mapDispatchToProps = (dispatch: any) => ({
   onMount() {
-    dispatch(Operation.getQuests());
+    dispatch(DataOperation.getQuests());
   },
 });
 

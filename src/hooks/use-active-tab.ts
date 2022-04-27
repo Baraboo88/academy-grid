@@ -1,10 +1,10 @@
-import { ActionCreator, ActiveTab } from '../reducer/reducer';
+import { DataActionCreator, ActiveTab } from '../reducer/data/data-reducer';
 import { useDispatch } from 'react-redux'
 
 
 const useActiveTab = (activeTab:ActiveTab) => {
   const dispatch = useDispatch();
-  dispatch(ActionCreator.setActiveTab(activeTab));
+  dispatch(DataActionCreator.setActiveTab(activeTab));
   return;
 };
 

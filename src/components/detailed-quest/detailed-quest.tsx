@@ -7,8 +7,8 @@ import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
 import { connect } from 'react-redux';
 import { getCyrillicLevel, getCyrillicType, OrderModel, QuestModel, StateModel } from '../../utils/utils';
-import { getCurrentQuest, getErrorMsg, getIsOrderSent } from '../../reducer/selectors';
-import { ActionCreator, ActiveTab, ErrorMsg, Operation } from '../../reducer/reducer';
+import { getCurrentQuest, getErrorMsg, getIsOrderSent } from '../../reducer/data/data-selectors';
+import { DataActionCreator, ActiveTab, ErrorMsg, DataOperation } from '../../reducer/data/data-reducer';
 import { RouteComponentProps } from 'react-router-dom';
 import { AlertMsg } from '../home/home.styled';
 import useActiveTab from '../../hooks/use-active-tab';
@@ -32,6 +32,16 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
 
     const { currentQuest, errorMsg, onMount, resetCurrentQuest, history, isOrderSent, setIsOrderSent, sendOrder } = props;
 
+    const [isOrderSending, setIsOrderSending] = useState(false);
+    const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
+    const [modalError, setModalError] = useState('');
+    const [name, setName] = useState<string>('');
+    const [peopleCount, setPeopleCount] = useState<string>('');
+    const [phone, setPhone] = useState<string>('');
+    const [isLegal, setIsLegal] = useState<boolean>(false);
+
+    useActiveTab(ActiveTab.Main);
+
     useEffect(() => {
       // @ts-ignore
       onMount(Number(props.match.params.id));
@@ -48,9 +58,6 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
     }, [errorMsg, history]);
 
 
-
-
-
     useEffect(() => {
       if (isOrderSent) {
         onBookingModalClose();
@@ -61,27 +68,19 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
         setModalError(errorMsg);
       }
 
-    }, [isOrderSent, errorMsg, setIsOrderSent]);
+    }, [isOrderSent, errorMsg, setIsOrderSent, isOrderSending]);
+
+
+    if (!currentQuest) {
+      return null;
+    }
+
 
     const onFormSubmit = () => {
       setIsOrderSending(true);
       sendOrder({ peopleCount: Number(peopleCount), isLegal, phone, name });
     };
 
-
-    useActiveTab(ActiveTab.Main);
-
-    const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
-    const [modalError, setModalError] = useState('');
-    const [name, setName] = useState<string>('');
-    const [peopleCount, setPeopleCount] = useState<string>('');
-    const [phone, setPhone] = useState<string>('');
-    const [isLegal, setIsLegal] = useState<boolean>(false);
-    const [isOrderSending, setIsOrderSending] = useState(false);
-
-    if (!currentQuest) {
-      return null;
-    }
 
     const onBookingModalClose = () => {
       setIsBookingModalOpened(false);
@@ -148,7 +147,7 @@ const DetailedQuest: React.FC<DetailedQuestProps & RouteComponentProps<MatchPara
               <S.Features>
                 <S.FeaturesItem>
                   <IconClock width='20' height='20' />
-                  <S.FeatureTitle>90 мин</S.FeatureTitle>
+                  <S.FeatureTitle>{`${currentQuest.duration} мин`}</S.FeatureTitle>
                 </S.FeaturesItem>
                 <S.FeaturesItem>
                   <IconPerson width='19' height='24' />
@@ -193,17 +192,18 @@ const mapStateToProps = (state: StateModel) => {
 const mapDispatchToProps = (dispatch: any) => (
   {
     onMount(id: number) {
-      dispatch(Operation.getQuest(id));
+      dispatch(DataOperation.getQuest(id));
     },
     resetCurrentQuest() {
-      dispatch(ActionCreator.resetQuest());
+      dispatch(DataActionCreator.setQuest(null));
+      dispatch(DataActionCreator.setIsResponseReceived(false));
+      dispatch(DataActionCreator.setError(''));
     },
     sendOrder(order: OrderModel) {
-      dispatch(Operation.sendOrder(order));
+      dispatch(DataOperation.sendOrder(order));
     },
-    setIsOrderSent(isOrderSent: boolean,
-    ) {
-      dispatch(ActionCreator.setIsOrderSent(isOrderSent));
+    setIsOrderSent(isOrderSent: boolean) {
+      dispatch(DataActionCreator.setIsOrderSent(isOrderSent));
     },
   }
 );

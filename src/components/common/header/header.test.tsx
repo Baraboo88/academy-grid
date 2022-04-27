@@ -17,6 +17,7 @@ Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 it(`Header successfully rendered`, () => {
   const mockFunc = jest.fn();
   const tree = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
-    theme={appTheme}><Header activeTab={testInitialState.activeTab} setActiveTab={mockFunc}/></ThemeProvider></BrowserRouter></Provider>);
+    theme={appTheme}><Header activeTab={testInitialState.data.activeTab}
+                             setActiveTab={mockFunc} /></ThemeProvider></BrowserRouter></Provider>);
   expect(toJson(tree, { mode: `deep` })).toMatchSnapshot();
 });

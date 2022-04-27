@@ -4,28 +4,25 @@ import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import Leaflet, { LatLngTuple } from 'leaflet';
 import contactsMap from '../../../../assets/img/marker.png';
 
-const position:LatLngTuple = [59.968353, 30.317575]
+const COORDINATES: LatLngTuple = [59.968353, 30.317575];
 
 const icon = new Leaflet.Icon({
   iconUrl: contactsMap,
   iconAnchor: [23.79, 61.06],
-})
+});
 
 const ContactsMap = () => {
   return (
-
     <MapContainer
-      center={position}
+      center={COORDINATES}
       zoom={16}
-
-      style={{ height: "100%", width: "100%", position: 'absolute', top: 0, left: 0, }}
+      style={{ height: '100%', width: '100%', position: 'absolute', top: 0, left: 0 }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
-      <Marker position={position}  icon={icon}  >
-
+      <Marker position={COORDINATES} icon={icon}>
       </Marker>
     </MapContainer>
   );

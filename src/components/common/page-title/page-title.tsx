@@ -5,7 +5,7 @@ interface PageTitleProps {
   children: string;
 }
 
-const PageTitle: React.FC <PageTitleProps> = ({ children, ...props }) => (
+const PageTitle: React.FC<PageTitleProps> = ({ children, ...props }) => (
   <S.PageTitle {...props}>{children}</S.PageTitle>
 );
 

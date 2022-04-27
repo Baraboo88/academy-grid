@@ -15,6 +15,7 @@ import { BookingModal } from '../components';
 Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 
 export const mockOrder: OrderModel = { name: 'Mock Name', phone: '975093', isLegal: true, peopleCount: '3' };
+
 describe(`BookingModal e2e`, () => {
 
   const onMockModalClose = jest.fn();
@@ -40,7 +41,7 @@ describe(`BookingModal e2e`, () => {
   });
 
 
-  it(`Should Model close work correctly`, () => {
+  it(`Should Model close works correctly`, () => {
     const closeButton = findByTestAtr(app, `test-model-close`);
     closeButton.simulate(`click`);
     expect(onMockModalClose).toHaveBeenCalledTimes(1);

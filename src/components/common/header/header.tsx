@@ -1,10 +1,10 @@
 import logo from 'assets/img/logo.svg';
 import * as S from './header.styled';
 import { StateModel } from '../../../utils/utils';
-import { ActionCreator, ActiveTab } from '../../../reducer/reducer';
+import { DataActionCreator, ActiveTab } from '../../../reducer/data/data-reducer';
 import { connect } from 'react-redux';
 import React from 'react';
-import { getActiveTab } from '../../../reducer/selectors';
+import { getActiveTab } from '../../../reducer/data/data-selectors';
 
 interface HeaderProps {
   activeTab: ActiveTab;
@@ -64,7 +64,7 @@ const mapStateToProps = (state: StateModel) => {
 
 const mapDispatchToProps = (dispatch: any) => ({
   setActiveTab(activeTab: ActiveTab) {
-    dispatch(ActionCreator.setActiveTab(activeTab));
+    dispatch(DataActionCreator.setActiveTab(activeTab));
   },
 });
 

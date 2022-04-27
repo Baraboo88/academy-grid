@@ -3,12 +3,11 @@ import { mount } from 'enzyme';
 import EnzymeReactAdapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
-
 import { DetailedQuest } from './detailed-quest';
 import { BrowserRouter } from '../common/common';
-import { findByTestAtr, getTestStore, mockQuests } from '../../utils/test-utils';
+import { getTestStore, mockQuests } from '../../utils/test-utils';
 import { appTheme } from '../app/common';
-import { ErrorMsg } from '../../reducer/reducer';
+import { ErrorMsg } from '../../reducer/data/data-reducer';
 
 Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 

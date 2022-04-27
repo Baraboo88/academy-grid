@@ -2,7 +2,7 @@ import * as Enzyme from 'enzyme';
 import { mount } from 'enzyme';
 import EnzymeReactAdapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { Provider } from 'react-redux';
-import toJson from 'enzyme-to-json';
+
 import { ThemeProvider } from 'styled-components';
 import 'jest-styled-components';
 import { getTestStore, mockQuests } from '../../../../utils/test-utils';
@@ -20,14 +20,12 @@ describe(`QuestsCatalog e2e`, () => {
 
   beforeEach(() => {
 
-    const app = mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
+    mount(<Provider store={getTestStore()}><BrowserRouter><ThemeProvider
       theme={appTheme}><QuestsCatalog quests={mockQuests}
                                       onMount={mockOnMount}
                                       isResponseReceived={false}
                                       errorMsg={''} /></ThemeProvider></BrowserRouter></Provider>);
   })
-
-
 
 
   it(`Should onMount successfully working`, () => {

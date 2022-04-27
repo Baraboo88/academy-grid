@@ -1,7 +1,6 @@
 import * as Enzyme from 'enzyme';
 import { mount } from 'enzyme';
 import EnzymeReactAdapter from '@wojtekmaj/enzyme-adapter-react-17';
-
 import { ThemeProvider } from 'styled-components';
 import { Header } from './header';
 import { appTheme } from '../../app/common';
@@ -11,15 +10,15 @@ import { BrowserRouter } from '../common';
 
 Enzyme.configure({ adapter: new EnzymeReactAdapter() });
 
-
 describe(`Header e2e`, () => {
   const onTabChange = jest.fn();
   let app = mount(<BrowserRouter><ThemeProvider
-      theme={appTheme}><Header activeTab={testInitialState.activeTab} setActiveTab={onTabChange}/></ThemeProvider></BrowserRouter>);
+    theme={appTheme}><Header activeTab={testInitialState.data.activeTab}
+                             setActiveTab={onTabChange} /></ThemeProvider></BrowserRouter>);
   const links = findByTestAtr(app, `test-header-link-click`);
 
   it(`tab reset is working`, () => {
-    links.forEach((link:any) => link.simulate(`click`));
+    links.forEach((link: any) => link.simulate(`click`));
     expect(onTabChange).toHaveBeenCalledTimes(3);
   });
 

@@ -1,4 +1,5 @@
-import { ActiveTab } from '../reducer/reducer';
+import { ActiveTab } from '../reducer/data/data-reducer';
+
 
 export enum QuestType {
   Adventures = 'adventures',
@@ -39,13 +40,17 @@ export interface OrderModel {
   isLegal: boolean
 }
 
-export interface StateModel {
+export interface DataStateModel {
   quests: QuestModel [];
   currentQuest?: QuestModel;
   isOrderSent?: boolean;
   isResponseReceived: boolean;
   errorMsg: string;
   activeTab: ActiveTab;
+}
+
+export interface StateModel{
+  data: DataStateModel
 }
 
 
@@ -78,4 +83,3 @@ export const getCyrillicType = (questType: QuestType) => {
 };
 
 
-export const applyFilter = (quests: QuestModel[], filter: QuestType) => quests.filter((quest) => quest.type === filter);
